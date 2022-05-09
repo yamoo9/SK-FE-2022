@@ -13,9 +13,9 @@
 아래 나열된 웹 표준 기술은 수업 시간에 별도 설명없이 활용되므로 선행 학습이 필요합니다.
 
 - [HTML](https://developer.mozilla.org/ko/docs/Web/HTML)：의미있는 구조화(Semantic Markup)
-- [CSS](https://developer.mozilla.org/ko/docs/Web/CSS)：모던 레이아웃(Flexbox & CSS Grid 등
+- [CSS](https://developer.mozilla.org/ko/docs/Web/CSS)：모던 레이아웃(Flexbox & CSS Grid 등)
 - [JavaScript](https://ko.javascript.info/)：DOM 접근/조작, 명령형 프로그래밍(Imperative, Event Handling 등)
-- [ECMAScript NEXT](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)：모던 JavaScript (v6(2015) 이후 매년 릴리즈 됨)
+- [ECMAScript NEXT](https://www.ecma-international.org/publications-and-standards/standards/ecma-262/)：모던 JavaScript (v6(2015) 이후 매년 릴리스 됨)
 - [DOM](https://developer.mozilla.org/ko/docs/Web/API/Document_Object_Model)：문서 객체 모델
 - [CSSOM](https://developer.mozilla.org/ko/docs/Web/API/CSS_Object_Model)：CSS 객체 모델
 - [WCAG](http://www.kwacc.or.kr/WAI/wcag21/) / [KWCAG](http://bit.ly/kwcag21)：웹 콘텐츠 접근성 지침 국제/국가 표준
@@ -71,7 +71,7 @@ npx -v
 
 #### Bash 쉘 스크립트
 
-강의에서 사용하는 명령어 환경은 [Bash Shell](https://ko.wikipedia.org/wiki/%EB%B0%B0%EC%8B%9C_(%EC%9C%A0%EB%8B%89%EC%8A%A4_%EC%85%B8)) (또는 [Zsh](https://ko.wikipedia.org/wiki/Z_%EC%85%B8))입니다.
+강의에서 사용하는 명령어 환경은 [Bash Shell](<https://ko.wikipedia.org/wiki/%EB%B0%B0%EC%8B%9C_(%EC%9C%A0%EB%8B%89%EC%8A%A4_%EC%85%B8)>) (또는 [Zsh](https://ko.wikipedia.org/wiki/Z_%EC%85%B8))입니다.
 
 Windows에서 Bash Shell을 사용하려면? [Git for Windows](https://gitforwindows.org/)를 설치한 후 Git Bash 에뮬레이터를 사용하세요.  
 Windows 10 사용자인 경우, [WSL](https://docs.microsoft.com/ko-kr/windows/wsl/about)을 설치해 Ubuntu를 사용하는 방법으로 대체할 수 있습니다.
