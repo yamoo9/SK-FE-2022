@@ -1,0 +1,32 @@
+{
+  "name": "learning-ecmascript-next",
+  "scripts": {
+    "compile": "babel src/chapter/*.js -d compiled",
+    "watch": "npm run compile -- --watch",
+    "test": "jest --watchAll",
+    "clear": "rimraf -rf compiled"
+  },
+  "jest": {
+    "setupFilesAfterEnv": [
+      "./setupTests.js"
+    ],
+    "testPathIgnorePatterns": [
+      "/node_modules/",
+      "/compiled/"
+    ]
+  },
+  "author": "yamoo9 <yamoo9@euid.dev>",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/cli": "7.17.6",
+    "@babel/core": "7.17.9",
+    "@babel/node": "7.17.10",
+    "@babel/preset-env": "7.16.11",
+    "@types/jest": "27.4.1",
+    "eslint": "8.13.0",
+    "eslint-plugin-jest": "26.1.4",
+    "jest": "27.5.1",
+    "regenerator-runtime": "0.13.9",
+    "rimraf": "3.0.2"
+  }
+}
