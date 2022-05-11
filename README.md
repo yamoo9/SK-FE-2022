@@ -31,7 +31,7 @@
 - [Webpack](https://webpack.js.org/)：모듈 번들러
 - [Babel](https://babeljs.io/)：JavaScript 컴파일러
 - [esbuild](https://esbuild.github.io) / [SWC](https://swc.rs/)：엄청 빠른 JavaScript 번들러
-- [ESLink](https://eslint.org/)：JavaScript 린터
+- [ESLint](https://eslint.org/)：JavaScript 린터
 - [Prettier](https://prettier.io/)：코드 포멧터
 - [Jest](https://jestjs.io/)：테스팅 프레임워크
 
