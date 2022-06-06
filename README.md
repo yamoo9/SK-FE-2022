@@ -4,7 +4,7 @@
 
 React, Vue 학습에서 앞서 자주 사용되는 프로그래밍 언어에 대한 이해가 필요합니다.
 
-- __ECMAScript__ (필수)
+- **ECMAScript** (필수)
 - TypeScript (선택)
 
 ## ECMAScript NEXT
@@ -110,7 +110,7 @@ module.exports = {
     'jest/no-identical-title': 'error',
     'jest/prefer-to-have-length': 'warn',
     'jest/valid-expect': 'error',
-		'jest/no-try-expect': 'off', // DEPRECATED
+    'jest/no-try-expect': 'off', // DEPRECATED
     'jest/no-conditional-expect': 'off',
   },
 };
@@ -132,7 +132,10 @@ Babel 구성
 {
   "comments": false,
   "presets": [
-    ["@babel/preset-env", { "loose": true }]
+    [
+      "@babel/preset-env", 
+      { "loose": true }
+    ]
   ]
 }
 ```
@@ -174,12 +177,12 @@ vscode 확장 [Prettier - Code formatter](https://marketplace.visualstudio.com/i
 
 Browserslist 구성
 
+[browserslist.dev](https://browserslist.dev/?q=PiAxJSBpbiBLUiwgaWUgMTEsIG1haW50YWluZWQgbm9kZSB2ZXJzaW9ucw%3D%3D) 참고
+
 `.browserslistrc`
 
 ```yml
-defaults
-not dead
 > 1% in KR
-IE 11
+ie 11
 maintained node versions
 ```
