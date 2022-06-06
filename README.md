@@ -61,7 +61,7 @@
 
 ### 런타임 환경
 
-강의에서 [Node.js](https://nodejs.org/ko/) 런타임 환경을 사용합니다. (Node v14+ 권장)
+강의에서 [Node.js](https://nodejs.org/ko/) 런타임 환경을 사용합니다. (Node v16+ 권장)
 
 ```sh
 node -v
@@ -69,29 +69,22 @@ npm -v
 npx -v
 ```
 
-#### Bash 쉘 스크립트
+### 쉘 스크립트
 
-강의에서 사용하는 명령어 환경은 [Bash Shell](<https://ko.wikipedia.org/wiki/%EB%B0%B0%EC%8B%9C_(%EC%9C%A0%EB%8B%89%EC%8A%A4_%EC%85%B8)>) (또는 [Zsh](https://ko.wikipedia.org/wiki/Z_%EC%85%B8))입니다.
+강의 중 명령어 환경에서 사용하는 쉘 스크립트는 [Zsh](https://ko.wikipedia.org/wiki/Z_%EC%85%B8) (또는 [Bash Shell](<https://ko.wikipedia.org/wiki/%EB%B0%B0%EC%8B%9C_(%EC%9C%A0%EB%8B%89%EC%8A%A4_%EC%85%B8)>))입니다.
 
 Windows에서 Bash Shell을 사용하려면? [Git for Windows](https://gitforwindows.org/)를 설치한 후 Git Bash 에뮬레이터를 사용하세요.  
 Windows 10 사용자인 경우, [WSL](https://docs.microsoft.com/ko-kr/windows/wsl/about)을 설치해 Ubuntu를 사용하는 방법으로 대체할 수 있습니다.
 
-💡 Power Shell 또는 CMD 명령에 능숙한 사용자라면? 꼭 Bash Shell을 사용할 필요는 없습니다.
+> 💡 Power Shell 또는 CMD 명령에 능숙한 사용자라면? 꼭 Bash Shell을 사용할 필요는 없습니다.
 
 ### 학습 저장소
 
-학습 저장소 [yamoo9/SK-FE-2022](https://github.com/yamoo9/SK-FE-2022)를 로컬 컴퓨터에 복제(clone) 하세요.
+학습 저장소 [yamoo9/SK-FE-2022](https://github.com/yamoo9/SK-FE-2022)를 포크(fork)한 후, 로컬 컴퓨터에 복제(clone)합니다.
 
-```sh
-git clone https://github.com/yamoo9/SK-FE-2022.git
-```
+- [GitHub 학습 저장소 동기화](https://euid.notion.site/GitHub-2d225be9479643048f3ef6358d68fc66)
+- [Git CLI & GitHub 가이드](https://euid.notion.site/euid/Git-CLI-GitHub-e90b66fa29654ef5858482ec039e77f7)
 
-💡 `git` 커멘드를 사용하려면 [Git이 컴퓨터에 설치되어 있어야 합니다.](https://git-scm.com/book/ko/v2/%EC%8B%9C%EC%9E%91%ED%95%98%EA%B8%B0-Git-%EC%84%A4%EC%B9%98)
-
-```sh
-git --version # git version 2.xx.x
-```
-
-<br />
+---
 
 <small>COPYRIGHT ALL RESERVED. 2022 @ EUID</small>
