@@ -1,6 +1,5 @@
+compiled
 
-# Created by https://www.toptal.com/developers/gitignore/api/windows,osx,node,visualstudiocode
-# Edit at https://www.toptal.com/developers/gitignore?templates=windows,osx,node,visualstudiocode
 
 ### Node ###
 # Logs
@@ -218,4 +217,3 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-# End of https://www.toptal.com/developers/gitignore/api/windows,osx,node,visualstudiocode
