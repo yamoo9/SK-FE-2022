@@ -2,7 +2,7 @@
 /* ECMAScript NEXT를 사용해 함수를 작성합니다.                                       */
 /* -------------------------------------------------------------------------- */
 
-const node = {
+const virtualNode = {
   name: 'figure',
   className: 'tagged-template-literals',
   style: { cssText: '' },

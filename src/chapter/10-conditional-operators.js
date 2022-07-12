@@ -1,5 +1,4 @@
 /* eslint-disable jest/expect-expect */
-/* eslint-disable no-unused-vars */
 
 /* 3항 연산 식(터너리), null 병합 연산자, 옵셔널 체이닝을 활용해 코드를 작성합니다. ---------------- */
 

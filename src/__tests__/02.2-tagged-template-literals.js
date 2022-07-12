@@ -2,7 +2,7 @@
 /* ECMAScript NEXT를 사용해 함수를 작성합니다.                                       */
 /* -------------------------------------------------------------------------- */
 
-const node = {
+const virtualNode = {
   name: 'figure',
   className: 'tagged-template-literals',
   style: { cssText: '' },
@@ -35,27 +35,27 @@ describe('styled 유틸리티 suite', () => {
   beforeEach(() => {});
 
   test('styled 유틸리티', () => {
-    const received = styled(['margin:10px;', 'color:salmon;'], node);
+    const received = styled(['margin:10px;', 'color:salmon;'], virtualNode);
 
-    expect(received.style.cssText).toBe(node.style.cssText);
+    expect(received.style.cssText).toBe(virtualNode.style.cssText);
   });
 
   test('tagged template literals : styled 유틸리티', () => {
     const received = styled`
-      ${node}
+      ${virtualNode}
       margin: 10px;
       color: salmon;
     `;
 
-    expect(received.style.cssText).toBe(node.style.cssText);
+    expect(received.style.cssText).toBe(virtualNode.style.cssText);
   });
 
   // $styled 유틸리티
   test('$styled 유틸리티', () => {
-    const received = $styled(node)`
+    const received = $styled(virtualNode)`
       margin: 10px;
       color: salmon;
     `;
-    expect(received).toStrictEqual(node);
+    expect(received).toStrictEqual(virtualNode);
   });
 });

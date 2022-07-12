@@ -45,6 +45,8 @@ var setState = function(newState) {
   return extend({}, state, newState);
 };
 
+/* -------------------------------------------------------------------------- */
+
 // 상태 객체 (불변 데이터 화)
 // React = 선언형 프로그래밍 패러다임
 // 불변(immutable) 데이터 관리
@@ -54,9 +56,9 @@ var state = Object.freeze({
   data: [{ id: 101, title: '초기 데이터' }],
 });
 
-console.log(
-  setState({ 
-    loading: true,
-    data: [{ id: 201, title: '데이터 업데이트' }]
-  })
-);
+var updatedState = setState({ 
+  loading: true,
+  data: [{ id: 201, title: '데이터 업데이트' }]
+})
+
+console.log(updatedState);

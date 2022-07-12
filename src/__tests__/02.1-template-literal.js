@@ -18,7 +18,7 @@ function renderCard(card) {
 }
 
 function removeSpaceString(string) {
-  return string.replace(/\s+/g, '');
+  return string.replace(/\n|\s+/g, '');
 }
 
 /* -------------------------------------------------------------------------- */
@@ -52,7 +52,5 @@ test('renderCard 렌더 유틸리티', () => {
     </div>
   `;
 
-  expect(removeSpaceString(rendered)).toHaveLength(
-    removeSpaceString(expected).length
-  );
+  expect(removeSpaceString(rendered)).toHaveLength(removeSpaceString(expected).length);
 });

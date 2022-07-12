@@ -1,12 +1,14 @@
-/* -------------------------------------------------------------------------- */
-/* ECMAScript NEXT를 사용해 함수를 작성합니다.                                       */
-/* -------------------------------------------------------------------------- */
+/* --------------------------------------------------------------------------------- */
+/* ECMAScript NEXT를 사용해 함수를 작성합니다.                                              */
+/* --------------------------------------------------------------------------------- */
+
+/* 클래스 유틸리티 함수 ----------------------------------------------------------------- */
 
 function createClass(classObject, SuperClass) {
+  if (!classObject) throw new TypeError('첫번째 인자인 classObject 객체가 설정되지 않았습니다.');
+
   // @constructor
   var Class = createClass.extractPropValue(classObject, 'constructor');
-
-  if (!Class) Class = new Function();
 
   // @static
   var staticMembers = createClass.extractPropValue(classObject, 'static');
@@ -16,6 +18,7 @@ function createClass(classObject, SuperClass) {
   }
 
   // @prototype
+  if (!Class.prototype) Class.prototype = {};
   createClass.exntends(Class.prototype, classObject);
 
   // @super
@@ -27,7 +30,26 @@ function createClass(classObject, SuperClass) {
     Class.prototype.consturctor = Class;
   }
 
+  Class.prototype.constructor = Class;
+
   return Class;
+}
+
+createClass.getFunctionParameters = function (func) {
+  var fnStr = func.toString().replace(/((\/\/.*$)|(\/\*[\s\S]*?\*\/))/mg, '');
+  var argsList = fnStr.slice(fnStr.indexOf('(')+1, fnStr.indexOf(')'));
+  var result = argsList.match(/(?:^|,)\s*([^\s,=]+)/g);
+
+  if(result === null) {
+    return [];
+  }
+  else {
+    var stripped = [];
+    for ( var i = 0; i < result.length; i++  ) {
+      stripped.push( result[i].replace(/[\s,]/g, '') );
+    }
+    return stripped;
+  }
 }
 
 createClass.defaultArg = function (value, initialValue) {
@@ -53,9 +75,12 @@ createClass.exntends = function (o1, o2) {
 };
 
 
+/* -------------------------------------------------------------------------- */
+
+
 // Button 클래스
 var Button = createClass({
-  constructor(type, label) {
+  constructor: function(type, label) {
     this.type = type;
     this.label = label;
   },
@@ -70,7 +95,7 @@ var Button = createClass({
 // Button 클래스를 확장한 AriaButton 클래스
 var AriaButton = createClass(
   {
-    constructor(type, label, usingAria) {
+    constructor: function(type, label, usingAria) {
       Button.apply(this, arguments);
       this.usingAria = createClass.defaultArg(usingAria, true);
     },

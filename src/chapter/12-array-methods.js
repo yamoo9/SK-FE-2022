@@ -1,5 +1,4 @@
 /* eslint-disable jest/expect-expect */
-/* eslint-disable no-unused-vars */
 
 /* 배열 메서드(Array Methods)는 데이터를 다룰 때 자주 사용됩니다. ------------------------------- */
 
