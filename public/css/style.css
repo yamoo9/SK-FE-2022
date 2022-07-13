@@ -1,0 +1,12 @@
+#root {
+  margin: 3rem;
+}
+
+#root * {
+  margin-bottom: 0;
+}
+
+abbr[title] {
+  cursor: help;
+  text-underline-offset: 4px;
+}

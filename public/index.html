@@ -3,20 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <title>안녕! React 😃</title>
-    <style>
-      #root {
-        margin: 3rem;
-      }
-
-      #root * {
-        margin-bottom: 0;
-      }
-
-      abbr[title] {
-        cursor: help;
-        text-underline-offset: 4px;
-      }
-    </style>
+    <link rel="stylesheet" href="./css/style.css" />
     <script src="//unpkg.com/react/umd/react.development.js" crossorigin></script>
     <script src="//unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
     <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
@@ -25,27 +12,12 @@
   </head>
   <body>
 
-    <div id="root" lang="en">
-      <!-- Redering React App -->
-    </div>
+    <div id="root" lang="en"></div>
 
     <script type="text/babel">
-      // ES5 (IE)
       (({ setTimeout, React: { StrictMode, createElement: h }, ReactDOM: { render, createRoot } }) => {
         
-        // <h1 class="headline"><strong>React</strong> Programming</h1>
-        // <p tabindex="-1">React is <abbr title="User Interface">UI</abbr> Building Library</p>
-
-        // DOM Node --------------------------------------------------------------
         const container = document.getElementById('root');
-
-        // Render React App ------------------------------------------------------
-        // using JSX (not standards)
-        // [Compiler: Babel, TypeScript] JSX → React.createElement API (JavaScript)
-
-
-        // Data Binding
-        // 보간(Interpolation)
 
         const state = Object.freeze({
           strong: {
@@ -64,24 +36,18 @@
               <strong>{state.strong.content}</strong> Programming
             </h1>
             <p tabIndex="-1" style={paragraphStyles}>
-              {state.strong.content.includes('React') ? '리액트' : '리액트가 아님'} is <abbr title="User Interface">UI</abbr> Building Library
+              {state.strong.content} is <abbr title="User Interface">UI</abbr> Building Library
             </p>
             <div className="formControl" data-my-id="my id">
-              {/* JSX Comment: <label htmlFor="userEmail">User Email</label> */}
+              {/* JSX Comment */} 
+              {/* <label htmlFor="userEmail">User Email</label> */}
               <input type="email" placeholder="yamoo9@euid.dev" aria-label="User Email" />
             </div>
           </StrictMode>
         );
 
-        // v18+ API
-        // Do not Support IE
         const reactRoot = createRoot(container);
         reactRoot.render(reactApp);
-
-        // Side Effects
-        // Time Control
-        // const TIMEOUT = 2000;
-        // setTimeout(() => reactRoot.unmount(), TIMEOUT);
 
       })(window);
     </script>
