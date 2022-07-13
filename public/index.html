@@ -19,6 +19,9 @@
     </style>
     <script src="//unpkg.com/react/umd/react.development.js" crossorigin></script>
     <script src="//unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
+    <script src="https://unpkg.com/core-js-bundle/index.js"></script>
+    <script src="https://unpkg.com/regenerator-runtime/runtime.js"></script>
   </head>
   <body>
 
@@ -26,32 +29,49 @@
       <!-- Redering React App -->
     </div>
 
-    <script>
+    <script type="text/babel">
+      // ES5 (IE)
       (({ setTimeout, React: { StrictMode, createElement: h }, ReactDOM: { render, createRoot } }) => {
         
         // <h1 class="headline"><strong>React</strong> Programming</h1>
         // <p tabindex="-1">React is <abbr title="User Interface">UI</abbr> Building Library</p>
 
-        // a11y
-        // tabbable vs. focusable
-
-        // React Node ------------------------------------------------------------
-        const strong = h('strong', null, 'React');
-        const headline = h('h1', { className: 'headline' }, strong, ' Programming');
-        const abbrebiation = h('abbr', { title: 'User Interface' }, 'UI');
-        const paragraph = h('p', { tabIndex: -1 }, abbrebiation, ' Building Library');
-        const label = h('label', { htmlFor: 'userEmail' }, 'User Email');
-        const input = h('input', { id: 'userEmail', type: 'email', readOnly: true,  value: 'yamoo9@euid.dev' });
-        const control = h('div', null, label, input)
-        const reactApp = h(StrictMode, null, headline, paragraph, control);
-
         // DOM Node --------------------------------------------------------------
         const container = document.getElementById('root');
 
         // Render React App ------------------------------------------------------
+        // using JSX (not standards)
+        // [Compiler: Babel, TypeScript] JSX → React.createElement API (JavaScript)
 
-        // v17 API
-        // render(reactApp, container);
+
+        // Data Binding
+        // 보간(Interpolation)
+
+        const state = Object.freeze({
+          strong: {
+            content: 'React'
+          }
+        });
+
+        const paragraphStyles = {
+          background: '#111', 
+          color: '#eee'
+        };
+
+        const reactApp = (
+          <StrictMode>
+            <h1 className="headline">
+              <strong>{state.strong.content}</strong> Programming
+            </h1>
+            <p tabIndex="-1" style={paragraphStyles}>
+              {state.strong.content.includes('React') ? '리액트' : '리액트가 아님'} is <abbr title="User Interface">UI</abbr> Building Library
+            </p>
+            <div className="formControl" data-my-id="my id">
+              {/* JSX Comment: <label htmlFor="userEmail">User Email</label> */}
+              <input type="email" placeholder="yamoo9@euid.dev" aria-label="User Email" />
+            </div>
+          </StrictMode>
+        );
 
         // v18+ API
         // Do not Support IE
