@@ -1,4 +1,4 @@
-const { React, ReactDOM } = window;
+const { React, ReactDOM, setInterval, clearInterval } = window;
 
 /* Utilites ----------------------------------------------------------------- */
 
@@ -7,8 +7,11 @@ const getRandomMinMax = (min = 0, max = 100) => getRandom(max - min) + min;
 
 /* DOM Scripting ------------------------------------------------------------ */
 
-const MIN = 47;
+const MIN = 36;
 const MAX = 99;
+const FPS = 60;
+const STEP = 1;
+
 const TARGET_COUNT = getRandomMinMax(MIN, MAX);
 
 document.title = `(${TARGET_COUNT}) ${document.title}`;
@@ -20,19 +23,29 @@ const isComplete = () => count >= TARGET_COUNT; // 애니메이션 종료 여부
 
 const reactRoot = ReactDOM.createRoot(document.getElementById('root'));
 
-// React Component (Reusability) → React Element
-// Functional Component
-// const Counter = () => <output style={{ animationName: 'none' }}>9</output>;
+const Counter = () => {
+  let completed = isComplete();
+  return (
+    <output style={completed ? { animationName: 'none' } : null}>
+      {count}
+    </output>
+  );
+};
 
-// class Component
-class Counter extends React.Component {
-  render() {
-    return <output style={{ animationName: 'none' }}>9</output>;
-  }
+function render() {
+  reactRoot.render(
+    <React.StrictMode>
+      <Counter />
+    </React.StrictMode>
+  );
 }
 
-reactRoot.render(
-  <React.StrictMode>
-    <Counter />
-  </React.StrictMode>
-);
+function animate() {
+  const clearId = setInterval(() => {
+    if (isComplete()) clearInterval(clearId);
+    else render();
+    count += STEP;
+  }, 1000 / FPS);
+}
+
+animate();

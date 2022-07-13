@@ -1,6 +1,8 @@
 {
   "private": true,
   "scripts": {
+    "start": "npm run watch & npm run dev",
+    "dev": "live-server public --host=localhost --port=3000 --no-browser",
     "compile": "babel src -d public",
     "watch": "npm run compile -- -w",
     "build": "npm run compile -- --minified"
@@ -11,6 +13,7 @@
     "@babel/preset-env": "7.18.6",
     "@babel/preset-react": "7.18.6",
     "eslint": "8.19.0",
-    "eslint-plugin-react": "7.30.1"
+    "eslint-plugin-react": "7.30.1",
+    "live-server": "1.2.2"
   }
 }
