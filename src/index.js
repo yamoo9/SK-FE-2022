@@ -1,50 +1,30 @@
-const { React, ReactDOM, setInterval, clearInterval } = window;
-
-/* Utilites ----------------------------------------------------------------- */
-
-const getRandom = (n) => Math.round(Math.random() * n);
-const getRandomMinMax = (min = 0, max = 100) => getRandom(max - min) + min;
-
-/* DOM Scripting ------------------------------------------------------------ */
-
-const MIN = 36;
-const MAX = 99;
-const FPS = 60;
-const STEP = 1;
-
-const TARGET_COUNT = getRandomMinMax(MIN, MAX);
-
-document.title = `(${TARGET_COUNT}) ${document.title}`;
+import './reloadBrowser.js';
+import { STEP, FPS } from './config.js';
+import { TARGET_COUNT, isComplete } from './writeDocumentTitle.js';
+import { RandomCountUp } from './components/RandomCountUp.js';
 
 /* React Programming -------------------------------------------------------- */
 
+const { React, ReactDOM, setInterval, clearInterval } = window;
+
 let count = 0;
-const isComplete = () => count >= TARGET_COUNT; // 애니메이션 종료 여부 반환 (true|false)
 
 const reactRoot = ReactDOM.createRoot(document.getElementById('root'));
 
-const Counter = () => {
-  let completed = isComplete();
-  return (
-    <output style={completed ? { animationName: 'none' } : null}>
-      {count}
-    </output>
-  );
-};
-
-function render() {
+function render(completed) {
   reactRoot.render(
     <React.StrictMode>
-      <Counter />
+      <RandomCountUp count={count} isComplete={completed} />
     </React.StrictMode>
   );
 }
 
 function animate() {
   const clearId = setInterval(() => {
-    if (isComplete()) clearInterval(clearId);
-    else render();
-    count += STEP;
+    let completed = isComplete(count);
+    if (completed) clearInterval(clearId);
+    else count += STEP;
+    render(completed);
   }, 1000 / FPS);
 }
 
