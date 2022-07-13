@@ -1,0 +1,10 @@
+@import url("./sanitize.css");
+
+html {
+  font-size: 10px;
+}
+
+abbr[title] {
+  cursor: help;
+  text-decoration: none;
+}
