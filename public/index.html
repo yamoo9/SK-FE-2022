@@ -4,53 +4,14 @@
     <meta charset="UTF-8" />
     <title>안녕! React 😃</title>
     <link rel="stylesheet" href="./css/style.css" />
-    <script src="//unpkg.com/react/umd/react.development.js" crossorigin></script>
-    <script src="//unpkg.com/react-dom/umd/react-dom.development.js" crossorigin></script>
-    <script src="https://unpkg.com/@babel/standalone/babel.min.js" crossorigin></script>
-    <script src="https://unpkg.com/core-js-bundle/index.js"></script>
-    <script src="https://unpkg.com/regenerator-runtime/runtime.js"></script>
+    <script src="//unpkg.com/react/umd/react.production.min.js" crossorigin></script>
+    <script src="//unpkg.com/react-dom/umd/react-dom.production.min.js" crossorigin></script>
   </head>
   <body>
 
     <div id="root" lang="en"></div>
 
-    <script type="text/babel">
-      (({ setTimeout, React: { StrictMode, createElement: h }, ReactDOM: { render, createRoot } }) => {
-        
-        const container = document.getElementById('root');
-
-        const state = Object.freeze({
-          strong: {
-            content: 'React'
-          }
-        });
-
-        const paragraphStyles = {
-          background: '#111', 
-          color: '#eee'
-        };
-
-        const reactApp = (
-          <StrictMode>
-            <h1 className="headline">
-              <strong>{state.strong.content}</strong> Programming
-            </h1>
-            <p tabIndex="-1" style={paragraphStyles}>
-              {state.strong.content} is <abbr title="User Interface">UI</abbr> Building Library
-            </p>
-            <div className="formControl" data-my-id="my id">
-              {/* JSX Comment */} 
-              {/* <label htmlFor="userEmail">User Email</label> */}
-              <input type="email" placeholder="yamoo9@euid.dev" aria-label="User Email" />
-            </div>
-          </StrictMode>
-        );
-
-        const reactRoot = createRoot(container);
-        reactRoot.render(reactApp);
-
-      })(window);
-    </script>
+    <script src="./index.js"></script>
 
   </body>
 </html>
