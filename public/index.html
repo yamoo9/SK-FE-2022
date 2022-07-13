@@ -29,15 +29,21 @@
     <script>
       (({ React: { StrictMode, createElement: h }, ReactDOM: { render } }) => {
         
-        // <h1><strong>React</strong> Programming</h1>
-        // <p>React is <abbr title="User Interface">UI</abbr> Building Library</p>
+        // <h1 class="headline"><strong>React</strong> Programming</h1>
+        // <p tabindex="-1">React is <abbr title="User Interface">UI</abbr> Building Library</p>
+
+        // a11y
+        // tabbable vs. focusable
 
         // React Node ------------------------------------------------------------
         const strong = h('strong', null, 'React');
-        const headline = h('h1', null, strong, ' Programming');
-        const abbrebiation = h('abbr', null, 'UI');
-        const paragraph = h('p', null, abbrebiation, ' Building Library');
-        const reactApp = h(StrictMode, null, headline, paragraph);
+        const headline = h('h1', { className: 'headline' }, strong, ' Programming');
+        const abbrebiation = h('abbr', { title: 'User Interface' }, 'UI');
+        const paragraph = h('p', { tabIndex: -1 }, abbrebiation, ' Building Library');
+        const label = h('label', { htmlFor: 'userEmail' }, 'User Email');
+        const input = h('input', { id: 'userEmail', type: 'email', readOnly: true,  value: 'yamoo9@euid.dev' });
+        const control = h('div', null, label, input)
+        const reactApp = h(StrictMode, null, headline, paragraph, control);
 
         // DOM Node --------------------------------------------------------------
         const container = document.getElementById('root');
