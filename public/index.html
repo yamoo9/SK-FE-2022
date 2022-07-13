@@ -28,34 +28,22 @@
 
     <script>
       (({ React: { StrictMode, createElement: h }, ReactDOM: { render } }) => {
-
+        
         // <h1><strong>React</strong> Programming</h1>
         // <p>React is <abbr title="User Interface">UI</abbr> Building Library</p>
 
-        const vHeadlineElement = h(
-          // type
-          'h1', 
-          // props
-          null, 
-          // [...children]
-          // strong
-          h('strong', null, 'React'),
-          // text
-          // ' ',
-          ' Programming'
-        );
+        // React Node ------------------------------------------------------------
+        const strong = h('strong', null, 'React');
+        const headline = h('h1', null, strong, ' Programming');
+        const abbrebiation = h('abbr', null, 'UI');
+        const paragraph = h('p', null, abbrebiation, ' Building Library');
+        const reactApp = h(StrictMode, null, headline, paragraph);
 
+        // DOM Node --------------------------------------------------------------
         const container = document.getElementById('root');
 
-        // 개발 중. React.StrictMode
-
-        render(h(
-          StrictMode,
-          null,
-          vHeadlineElement
-        ), container, () => {
-          console.log('mounted React App');
-        })
+        // Render React App ------------------------------------------------------
+        render(reactApp, container);
 
       })(window);
     </script>
