@@ -17,13 +17,48 @@
         text-underline-offset: 4px;
       }
     </style>
+    <script src="//unpkg.com/react@17/umd/react.development.js" crossorigin></script>
   </head>
   <body>
 
     <div id="root" lang="en">
-      <h1>React Programming</h1>
-      <p>React is <abbr title="User Interface">UI</abbr> Building Library</p>
+      <!-- Redering React App -->
     </div>
+
+    <script>
+      (({ React }) => {
+
+        // <h1><strong>React</strong> Programming</h1>
+        // <p>React is <abbr title="User Interface">UI</abbr> Building Library</p>
+      
+        // 구조 분해 할당 (객체 { StrcitMode, createElement })
+        const { StrictMode, createElement: h } = React; /* Virtual DOM */
+
+        // Actual DOM Node (HTMLHeadingElement)
+        const headlineElement = document.createElement('h1');
+        const strongElement = document.createElement('strong');
+        strongElement.textContent = 'React';
+        headlineElement.insertAdjacentElement('beforeend', strongElement);
+        headlineElement.innerHTML += ' Programming';
+        // console.dir(headlineElement);
+
+        // Virtual DOM Node (React Element)
+        // h 함수 → React 요소(element) 생성
+        const vHeadlineElement = h(
+          // type
+          'h1', 
+          // props
+          null, 
+          // [...children]
+          // strong
+          h('strong', null, 'React'),
+          // text
+          'Programming'
+        );
+        console.dir(vHeadlineElement);
+
+      })(window);
+    </script>
 
   </body>
 </html>
