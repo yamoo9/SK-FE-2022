@@ -1,0 +1,22 @@
+{
+  "name": "manual-configuration-for-react",
+  "description": "React 개발 환경을 직접 구성하기 (with Webpack)",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "npm run serve -- --open",
+    "watch": "npm run compile -- --watch",
+    "compile": "webpack ./src/index.js -o ./public -t web --mode development",
+    "serve": "webpack server ./src/index.js -o ./public -t web --mode development"
+  },
+  "keywords": [
+    "webpack",
+    "babel",
+    "react",
+    "react-dom"
+  ],
+  "devDependencies": {
+    "webpack": "5.73.0",
+    "webpack-cli": "4.10.0",
+    "webpack-dev-server": "4.9.3"
+  }
+}
