@@ -8,6 +8,12 @@
 
 "[SK 동반 성장, React & Vue 교육 사전 설문](https://forms.gle/p7BudfLtvyo5SJ9S9)"에 응답해주세요.
 
+## 학습 방법 추천
+
+줌(Zoom)을 사용한 화상 강의의 특성 상 녹화 된 강의를 시청하는 것과는 학습 환경이 다릅니다.
+
+강의는 각 주제의 개념을 설명 함과 동시에 라이브 코딩 합니다. 주제 별 학습과 실습을 동시 진행하기 어려울 경우 학습과 실습을 병행한 방식보다 강의 주제를 듣고 노트에 정리한 후, 추후에 시간을 내서 실습하며 복습하는 것이 효과적입니다.
+
 ## 선행 학습
 
 아래 나열된 웹 표준 기술은 수업 시간에 별도 설명없이 활용되므로 선행 학습이 필요합니다.
@@ -31,15 +37,10 @@
 - [Webpack](https://webpack.js.org/)：모듈 번들러
 - [Babel](https://babeljs.io/)：JavaScript 컴파일러
 - [esbuild](https://esbuild.github.io) / [SWC](https://swc.rs/)：엄청 빠른 JavaScript 번들러
+- [Vite](https://vitejs.dev/)：차세대 프론트엔드 도구
 - [ESLint](https://eslint.org/)：JavaScript 린터
 - [Prettier](https://prettier.io/)：코드 포멧터
 - [Jest](https://jestjs.io/)：테스팅 프레임워크
-
-## 학습 방법 추천
-
-줌(Zoom)을 사용한 화상 강의의 특성 상 녹화 된 강의를 시청하는 것과는 학습 환경이 다릅니다.  
-강의는 각 주제의 개념을 설명 함과 동시에 라이브 코딩 합니다. 주제 별 학습과 실습을 동시 진행하기 어려울 경우  
-학습과 실습을 병행한 방식보다 강의 주제를 듣고 노트에 정리한 후, 추후에 시간을 내서 실습하며 복습하는 것이 효과적입니다.
 
 ## 학습 준비
 
@@ -55,19 +56,9 @@
 - [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=ko)
 - [Vue.js devtools](https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg)
 
-### 코드 에디터
-
-강의에서 사용되는 에디터는 Microsoft 사의 [Visual Studio Code](https://code.visualstudio.com/) 입니다.
-
 ### 런타임 환경
 
 강의에서 [Node.js](https://nodejs.org/ko/) 런타임 환경을 사용합니다. (Node v16+ 권장)
-
-```sh
-node -v
-npm -v
-npx -v
-```
 
 ### 쉘 스크립트
 
@@ -83,7 +74,12 @@ Windows 10 사용자인 경우, [WSL](https://docs.microsoft.com/ko-kr/windows/w
 학습 저장소 [yamoo9/SK-FE-2022](https://github.com/yamoo9/SK-FE-2022)를 포크(fork)한 후, 로컬 컴퓨터에 복제(clone)합니다.
 
 - [GitHub 학습 저장소 동기화](https://euid.notion.site/GitHub-2d225be9479643048f3ef6358d68fc66)
-- [Git CLI & GitHub 가이드](https://euid.notion.site/euid/Git-CLI-GitHub-e90b66fa29654ef5858482ec039e77f7)
+
+### 코드 에디터
+
+강의에서 사용되는 에디터는 Microsoft 사의 [Visual Studio Code](https://code.visualstudio.com/) 입니다.
+
+- [VS Code 구성](https://euid.notion.site/VS-Code-b562958a811b4aa2a1864a1902e7c536)
 
 ---
 
