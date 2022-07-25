@@ -97,8 +97,13 @@
   "javascript.autoClosingTags": true,
   "javascript.suggest.autoImports": true,
   "javascript.suggest.completeFunctionCalls": true,
+
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "javascript.inlayHints.variableTypes.enabled": true,
   "javascript.inlayHints.parameterNames.enabled": "all",
   "javascript.inlayHints.functionLikeReturnTypes.enabled": true,
+  "javascript.inlayHints.propertyDeclarationTypes.enabled": true,
+  "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": false,
 
   "typescript.autoClosingTags": true,
   "typescript.suggest.autoImports": true,
