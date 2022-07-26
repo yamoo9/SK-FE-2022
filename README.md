@@ -69,6 +69,8 @@ Windows 10 사용자인 경우, [WSL](https://docs.microsoft.com/ko-kr/windows/w
 
 > 💡 Power Shell 또는 CMD 명령에 능숙한 사용자라면? 꼭 Bash Shell을 사용할 필요는 없습니다.
 
+> 💡 [Windows 관리자 권한으로 Visual Studio Code 실행 방법](https://bit.ly/3S0d6fM)을 참고하세요.
+
 ### 학습 저장소
 
 학습 저장소 [yamoo9/SK-FE-2022](https://github.com/yamoo9/SK-FE-2022)를 포크(fork)한 후, 로컬 컴퓨터에 복제(clone)합니다.
