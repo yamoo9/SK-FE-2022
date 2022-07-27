@@ -6,10 +6,16 @@
     "*rc": "json"
   },
   "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
     "**/*.js.map": {
       "when": "$(basename)"
     },
-    "**/node_modules": true
+    "**/node_modules": false
   },
   "search.exclude": {
     "**/coverage": true,
