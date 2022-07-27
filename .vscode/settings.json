@@ -111,9 +111,7 @@
   "typescript.inlayHints.parameterNames.enabled": "all",
   "typescript.inlayHints.functionLikeReturnTypes.enabled": true,
 
-  "editor.formatOnSave": true,
   "javascript.format.enable": false,
-  "javascript.validate.enable": true,
   "typescript.format.enable": false,
   "typescript.validate.enable": true,
 
