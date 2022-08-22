@@ -1,13 +1,7 @@
 ###### SK 동반성장 BP사 대상 “React & Vue" 교육
 
-# 프로그래밍 언어
+# React 시작하기 (웹 사이트)
 
-React, Vue 학습에서 앞서 자주 사용되는 프로그래밍 언어에 대한 이해가 필요합니다.
+React는 UI 코드를 컴포넌트라 불리우는 조각(piece)으로 분리하여 구성할 수 있는 라이브러리입니다. React는 라우팅(routing)이나 데이터 관리(management state)를 처리하지 않습니다. React로 전체 웹 애플리케이션을 구축할 필요는 없습니다. HTML 문서에 React를 추가하는 것은 별도 설치가 필요하지 않으며 컴포넌트 작성을 즉시 시작할 수 있습니다.
 
-- __ECMAScript__ (필수)
-- TypeScript (선택)
-
-## ECMAScript NEXT
-
-애플리케이션 개발에서 효율적으로 활용하기 위해서 모던 JavaScript의 새로운 기능을 배우고 적극적으로 활용해야 합니다.  
-여기에서 소개하는 새로운 기능들은 React, Vue 사용을 위해 필히 알아야 할 [JavaScript의 새로운 기능](https://2021.stateofjs.com/ko-KR/features/language)입니다.
+다만, 이는 매우 제한적이므로 학습 목적으로만 적합하며 실무에서는 사용하지 않는 것이 좋습니다.

@@ -49,10 +49,52 @@ abbr[title] {
 
 .headline {
   font-weight: 100;
-  font-size: 3rem;
+  font-size: 1.8rem;
   color: var(--fg);
+}
+
+strong {
+  font-weight: 600;
 }
 
 .accent {
   font-weight: 600;
+}
+
+.reactLogo {
+  position: fixed;
+  z-index: -1;
+  left: 50%;
+  top: 50%;
+  translate: -50% -50%;
+  width: auto;
+  height: 70vh;
+  opacity: 0.1;
+  color: var(--fg);
+  animation: rotation 60s steps(60, start) infinite alternate;
+  animation-play-state: running;
+}
+
+@keyframes rotation {
+  0% { rotate: 0deg; scale: 110%; }
+  100% { rotate: 360deg; scale: 115% }
+}
+
+@media (prefers-reduced-motion) {
+  .reactLogo {
+    animation-play-state: paused;
+  }
+}
+
+@media (prefers-contrast: more) {
+  body {
+    background: #434343;
+  }
+  .reactLogo {
+    color: #000;
+    opacity: 1;
+  }
+  .headline {
+    color: #fff;
+  }
 }
