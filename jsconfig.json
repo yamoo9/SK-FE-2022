@@ -1,8 +1,0 @@
-{
-  "typeAcquisition": {
-    "enable": false,
-    "include": [
-      "jest"
-    ]
-  }
-}

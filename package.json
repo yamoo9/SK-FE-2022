@@ -1,10 +1,13 @@
 {
   "name": "learning-ecmascript-next",
   "scripts": {
-    "compile": "babel src/chapter/*.js -d compiled",
+    "start": "run-p client server",
+    "client": "live-server client --host=localhost --port=3000 --no-browser",
+    "server": "json-server server/books.json --watch --port=4000 --delay=1000",
+    "compile": "babel client/src/chapter/*.js -d client/compiled",
     "watch": "npm run compile -- --watch",
     "test": "jest --watchAll",
-    "clear": "rimraf -rf compiled"
+    "clear": "rimraf -rf client/compiled"
   },
   "jest": {
     "setupFilesAfterEnv": [
@@ -12,7 +15,7 @@
     ],
     "testPathIgnorePatterns": [
       "/node_modules/",
-      "/compiled/"
+      "/client/compiled/"
     ]
   },
   "author": "yamoo9 <yamoo9@euid.dev>",
@@ -23,9 +26,13 @@
     "@babel/node": "7.17.10",
     "@babel/preset-env": "7.16.11",
     "@types/jest": "27.4.1",
+    "cross-env": "7.0.3",
     "eslint": "8.13.0",
     "eslint-plugin-jest": "26.1.4",
     "jest": "27.5.1",
+    "json-server": "0.17.0",
+    "live-server": "1.2.2",
+    "npm-run-all": "4.1.5",
     "regenerator-runtime": "0.13.9",
     "rimraf": "3.0.2"
   }
