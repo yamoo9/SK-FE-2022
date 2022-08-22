@@ -120,16 +120,4 @@
   "javascript.format.enable": false,
   "typescript.format.enable": false,
   "typescript.validate.enable": true,
-
-  "path-intellisense.extensionOnImport": true,
-  "path-intellisense.mappings": {
-    "@": "${workspaceRoot}/src"
-  },
-
-  "turboConsoleLog.includeFileNameAndLineNum": false,
-  "turboConsoleLog.insertEnclosingFunction": false,
-  "turboConsoleLog.insertEnclosingClass": false,
-  "turboConsoleLog.logMessagePrefix": "DEBUG → ",
-  "turboConsoleLog.delimiterInsideMessage": "",
-  "turboConsoleLog.quote": "'"
 }
