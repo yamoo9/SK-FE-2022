@@ -75,6 +75,14 @@ strong {
   animation-play-state: running;
 }
 
+.button {
+  position: fixed;
+  z-index: 1000;
+  top: 30px;
+  right: 30px;
+  
+}
+
 @keyframes rotation {
   0% { rotate: 0deg; scale: 110%; }
   100% { rotate: 360deg; scale: 115% }
