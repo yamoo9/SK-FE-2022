@@ -76,11 +76,25 @@ strong {
 }
 
 .button {
+  cursor: pointer;
+  border-radius: 3px;
+  border: 3px solid currentColor;
+  padding: 0.6em 1em;
+  background: transparent;
+  color: var(--fg);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.button.button--fixed {
   position: fixed;
-  z-index: 1000;
-  top: 30px;
-  right: 30px;
-  
+  top: 32px;
+  right: 32px;
+  z-index: 100;
+}
+
+.stopMotion {
+  animation-play-state: paused;
 }
 
 @keyframes rotation {
@@ -105,4 +119,26 @@ strong {
   .headline {
     color: #fff;
   }
+  .motionControl {
+    color: #fff;
+  }
+}
+
+/* Contrast Mode ------------------------------------------------------------ */
+
+.contrastMode {
+  background: #434343;
+}
+
+.contrastMode .reactLogo {
+  color: #000;
+  opacity: 1;
+}
+
+.contrastMode .headline {
+  color: #fff;
+}
+
+.contrastMode .button {
+  color: #fff;
 }
