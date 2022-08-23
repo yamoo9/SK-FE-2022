@@ -13,25 +13,27 @@
 </div>
 */
 
+
 /* --------------------------------------------------------------------------------------- */
 
-function renderCard(card) {
-  return (
-    '<div class="card">\
-      <img src="' + card.image.src + '" class="card-img-top" alt="' + card.image.alt + '" />\
-      <div class="card-body">\
-        <h5 class="card-title">' + card.title + '</h5>\
-        <p class="card-text">' + card.description + '</p>\
-        <a href="' + card.link.href + '" class="btn btn-primary">' + card.link.text + '</a>\
-      </div>\
-    </div>\
-    '
-  );
-}
+// "string" + data + "another string"
+// 'string' + data + 'another string'
+// `string ${data} another string`
 
-function removeSpaceString(string) {
-  return string.replace(/\n|\s+/g, '');
-}
+const renderCard = card => (
+  `<div class="card">
+    <img src="${card.image.src}" class="card-img-top" alt="${card.image.alt}" />
+    <div class="card-body">
+      <h5 class="card-title">${card.title}</h5>
+      <p class="card-text">${card.description}</p>
+      <a href="${card.link.href}" class="btn btn-primary">${card.link.text}</a>      
+    </div>    
+  </div>`
+);
+
+// function removeSpaceString(string) {
+//   return string.replace(/\n|\s+/g, '');
+// }
 
 /* --------------------------------------------------------------------------------------- */
 
@@ -48,6 +50,6 @@ const cardInfo = {
   },
 };
 
-let rendered = removeSpaceString(renderCard(cardInfo));
+let rendered = renderCard(cardInfo);
 
 console.log(rendered);
