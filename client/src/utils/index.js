@@ -5,3 +5,6 @@ export { default as numberWithComma } from './currency/numberWithComma.js';
 // export { currency, currencyKR } from "./currency/currency.js";
 // export { currencyKR } from "./currency/currency.js";
 export * from './currency/currency.js';
+
+// 3. fetchBooks.js 모듈 이름으로 다시 내보내기
+export * from './fetchBooks.js';
