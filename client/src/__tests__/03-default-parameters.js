@@ -3,13 +3,13 @@
 /* -------------------------------------------------------------------------- */
 
 const defaultArg = (value, initialValue) => {
-  if (value === null || value === undefined) {
+  if (value  ===  null || value === undefined) {
     value = initialValue;
   }
   return value;
 };
 
-const truncateText = (text, limit) => {
+const truncateText = (text, limit /* 0 */) => {
   limit = defaultArg(limit, 100);
   return `${text.slice(0, limit).trim()}...`;
 };
