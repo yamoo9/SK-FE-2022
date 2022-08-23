@@ -4,11 +4,23 @@
 /* ECMAScript NEXT를 사용해 함수를 작성합니다.                                       */
 /* -------------------------------------------------------------------------- */
 
+// spread operator ...
+// mixins: combine(merge) object
+// 나머지 매개변수 rest paramters
+
 /* 배열 전개 ------------------------------------------------------------------- */
 
-var integers = [-1, 0, 32, -101, 24];
-var maxInt = Math.max.apply(Math, [302, 1, 2, 30, -101].concat(integers));
+const integers = [-1, 0, 32, -101, 24];
 
+// Function.prototype.(call|apply|bind)
+// this 런타임 변경 가능
+// method 빌려쓰기 패턴 (예: 새.날다() - 새.날다.apply(사람) )
+// let maxInt = Math.max.apply(Math, [302, 1, 2, 30, -101].concat(integers));
+
+let maxInt = Math.max(...[302, 1, 2, 30, -101, ...integers]);
+console.log(maxInt);
+
+// 예측가능성(predictable): 변할 수 있음 Mutable → 변할 수 없음 Immutable
 
 /* 객체 전개 ------------------------------------------------------------------- */
 
@@ -41,7 +53,7 @@ var extend = function () {
 };
 
 // 상태 업데이트 유틸리티 함수
-var setState = function(newState) {
+var setState = function (newState) {
   return extend({}, state, newState);
 };
 
@@ -56,9 +68,9 @@ var state = Object.freeze({
   data: [{ id: 101, title: '초기 데이터' }],
 });
 
-var updatedState = setState({ 
+var updatedState = setState({
   loading: true,
-  data: [{ id: 201, title: '데이터 업데이트' }]
-})
+  data: [{ id: 201, title: '데이터 업데이트' }],
+});
 
 console.log(updatedState);
