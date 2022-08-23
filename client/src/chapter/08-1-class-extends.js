@@ -5,7 +5,10 @@
 /* 클래스 유틸리티 함수 ----------------------------------------------------------------- */
 
 function createClass(classObject, SuperClass) {
-  if (!classObject) throw new TypeError('첫번째 인자인 classObject 객체가 설정되지 않았습니다.');
+  if (!classObject)
+    throw new TypeError(
+      '첫번째 인자인 classObject 객체가 설정되지 않았습니다.'
+    );
 
   // @constructor
   var Class = createClass.extractPropValue(classObject, 'constructor');
@@ -36,21 +39,20 @@ function createClass(classObject, SuperClass) {
 }
 
 createClass.getFunctionParameters = function (func) {
-  var fnStr = func.toString().replace(/((\/\/.*$)|(\/\*[\s\S]*?\*\/))/mg, '');
-  var argsList = fnStr.slice(fnStr.indexOf('(')+1, fnStr.indexOf(')'));
+  var fnStr = func.toString().replace(/((\/\/.*$)|(\/\*[\s\S]*?\*\/))/gm, '');
+  var argsList = fnStr.slice(fnStr.indexOf('(') + 1, fnStr.indexOf(')'));
   var result = argsList.match(/(?:^|,)\s*([^\s,=]+)/g);
 
-  if(result === null) {
+  if (result === null) {
     return [];
-  }
-  else {
+  } else {
     var stripped = [];
-    for ( var i = 0; i < result.length; i++  ) {
-      stripped.push( result[i].replace(/[\s,]/g, '') );
+    for (var i = 0; i < result.length; i++) {
+      stripped.push(result[i].replace(/[\s,]/g, ''));
     }
     return stripped;
   }
-}
+};
 
 createClass.defaultArg = function (value, initialValue) {
   return value === undefined ? initialValue : value;
@@ -74,13 +76,11 @@ createClass.exntends = function (o1, o2) {
   }
 };
 
-
 /* -------------------------------------------------------------------------- */
-
 
 // Button 클래스
 var Button = createClass({
-  constructor: function(type, label) {
+  constructor: function (type, label) {
     this.type = type;
     this.label = label;
   },
@@ -92,10 +92,14 @@ var Button = createClass({
   },
 });
 
+// var saveButton = new Button('button', '저장');
+// console.log(Button.version);
+// console.log(saveButton.getType());
+
 // Button 클래스를 확장한 AriaButton 클래스
 var AriaButton = createClass(
   {
-    constructor: function(type, label, usingAria) {
+    constructor: function (type, label, usingAria) {
       Button.apply(this, arguments);
       this.usingAria = createClass.defaultArg(usingAria, true);
     },
@@ -108,3 +112,7 @@ var AriaButton = createClass(
   },
   Button
 );
+
+console.log(AriaButton.displayName);
+var resetButton = new AriaButton('reset', '초기화', false);
+console.log(resetButton.getVersion());

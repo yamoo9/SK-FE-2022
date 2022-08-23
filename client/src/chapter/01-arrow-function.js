@@ -11,7 +11,7 @@ const { expect } = require('expect');
 // 문(값을 반환 X)
 // 식, 함수(값을 반환)
 
-const fibonacci = n => (n <= 1) ? 1 : fibonacci(n - 1) + fibonacci(n - 2);
+const fibonacci = (n) => (n <= 1 ? 1 : fibonacci(n - 1) + fibonacci(n - 2));
 
 let result = fibonacci(8);
 
@@ -20,7 +20,8 @@ console.log('fibonacci(8) === 34 OK!');
 
 // 함수 (표현)식 → 화살표 함수식
 
-var numberWithComma = n => n.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+var numberWithComma = (n) =>
+  n.toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
 
 result = numberWithComma(98000);
 
