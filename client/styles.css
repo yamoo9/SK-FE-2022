@@ -75,6 +75,28 @@ strong {
   animation-play-state: running;
 }
 
+.button {
+  cursor: pointer;
+  border-radius: 3px;
+  border: 3px solid currentColor;
+  padding: 0.6em 1em;
+  background: transparent;
+  color: var(--fg);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.button.button--fixed {
+  position: fixed;
+  top: 32px;
+  right: 32px;
+  z-index: 100;
+}
+
+.stopMotion {
+  animation-play-state: paused;
+}
+
 @keyframes rotation {
   0% { rotate: 0deg; scale: 110%; }
   100% { rotate: 360deg; scale: 115% }
@@ -97,4 +119,26 @@ strong {
   .headline {
     color: #fff;
   }
+  .motionControl {
+    color: #fff;
+  }
+}
+
+/* Contrast Mode ------------------------------------------------------------ */
+
+.contrastMode {
+  background: #434343;
+}
+
+.contrastMode .reactLogo {
+  color: #000;
+  opacity: 1;
+}
+
+.contrastMode .headline {
+  color: #fff;
+}
+
+.contrastMode .button {
+  color: #fff;
 }
