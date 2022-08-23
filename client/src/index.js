@@ -1,3 +1,5 @@
+import { update, getState } from './store.js';
+
 /* global React, ReactDOM */
 
 const headline = React.createElement(
@@ -49,4 +51,11 @@ const container = document.getElementById('root');
 // create ReactDOMRoot
 const reactDOMRoot = ReactDOM.createRoot(container);
 // ReactDOMRoot render (React Element)
-reactDOMRoot.render(app);
+function render() {
+  console.log(getState());
+  reactDOMRoot.render(app);
+}
+
+render();
+
+update(render);
