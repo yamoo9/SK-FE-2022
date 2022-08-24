@@ -5,6 +5,8 @@
     "client": "live-server client --host=localhost --port=3000 --no-browser",
     "server": "json-server server/books.json --watch --port=4000 --delay=1000",
     "compile": "babel client/src/**/*.js -d client/compiled",
+    "build": "babel client/src/**/*.js -d client/build --minified",
+    "preview": "npx serve -s client",
     "watch": "npm run compile -- --watch",
     "test": "jest --watchAll",
     "clear": "rimraf -rf client/compiled"
