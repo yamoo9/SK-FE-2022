@@ -1,0 +1,18 @@
+{
+  "name": "scaffold-manual",
+  "version": "0.0.1",
+  "description": "React 개발 환경 매뉴얼 구성",
+  "scripts": {
+    "start": "",
+    "bundle": "webpack --node-env=development",
+    "serve": "",
+    "build": "webpack build --node-env=production"
+  },
+  "keywords": [
+    "react",
+    "webpack",
+    "babel"
+  ],
+  "author": "yamoo9 <yamoo9@euid.dev>",
+  "license": "MIT"
+}

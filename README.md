@@ -9,12 +9,6 @@
 
 2. React 개발 환경 매뉴얼 구성
     - Webpack 모듈 번들러
-      <!-- - mode
-      - targets
-      - entry
-      - output
-      - loaders
-      - plugins -->
     - TypeScript / Babel 컴파일러
     - CSS Modules / Sass / PostCSS / CSS in JS (JSS)
     - HTML Template
