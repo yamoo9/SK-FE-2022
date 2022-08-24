@@ -1,4 +1,11 @@
-import { getState, playMotion, stopMotion, update } from './store.js';
+import {
+  disableContrast,
+  enableContrast,
+  playMotion,
+  stopMotion,
+  getState,
+  update,
+} from './store.js';
 
 /* global React, ReactDOM */
 
@@ -96,10 +103,12 @@ function App(props) {
     h(
       Button,
       {
-        onClick: () => {},
-        style: { top: 76 },
+        style: { top: 82 },
+        onClick() {
+          props.contrast ? disableContrast() : enableContrast();
+        },
       },
-      'enable high-contrast'
+      `${props.contrast ? 'disable' : 'enable'} high-contrast`
     )
   );
 }
@@ -112,8 +121,15 @@ const reactDOMRoot = ReactDOM.createRoot(container);
 /* like Redux Store --------------------------------------------------------- */
 
 function render() {
-  const { motion } = getState();
-  reactDOMRoot.render(h(StrictMode, null, h(App, { motion })));
+  const { motion, contrast } = getState();
+
+  if (contrast) {
+    document.body.classList.add('contrastMode');
+  } else {
+    document.body.classList.remove('contrastMode');
+  }
+
+  reactDOMRoot.render(h(StrictMode, null, h(App, { motion, contrast })));
 }
 
 render();
