@@ -1,9 +1,11 @@
-import { getRandomMinMax, testRepeat } from './utils';
+import React, { StrictMode } from 'react';
+import ReactDOM from 'react-dom/client';
+import App from './app/App';
 
-function rollingDice() {
-  return getRandomMinMax(1, 6);
-}
-
-testRepeat(() => {
-  console.log(rollingDice());
-}, 100);
+const container = document.getElementById('root');
+const reactDOMRoot = ReactDOM.createRoot(container);
+reactDOMRoot.render(
+  <StrictMode>
+    <App />
+  </StrictMode>
+);
