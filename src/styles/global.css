@@ -1,0 +1,77 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background: #ebfb0f;
+}
+
+.container {
+  font: 300 1rem/1.5 'Spoqa Hans Sans', sans-serif;
+}
+
+.container h1 {
+  font-weight: 300;
+}
+
+.container p {
+  margin-top: 0.4rem;
+}
+
+.headline {
+  --font-size: 2.4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0;
+  font-size: var(--font-size);
+  font-weight: inherit;
+}
+
+.headline img {
+  height: var(--font-size);
+  margin-top: -8px;
+  margin-right: 8px;
+}
+
+.globalNavigation ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  margin: 1rem 0;
+  padding-left: 0;
+}
+
+.globalNavigation a {
+  padding: 0.3em 0.6em;
+  text-decoration: none;
+  color: #4a30e9;
+}
+
+.descriptionList {
+  width: 30rem;
+  margin: 30px auto;
+}
+
+.descriptionList dt {
+  margin-bottom: 0px;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.descriptionList dd {
+  margin-bottom: 20px;
+  margin-left: 0;
+}
+
+.descriptionList pre {
+  overflow: auto;
+  height: 10rem;
+  border: 1px solid #e6e6e6;
+  font-size: 11px;
+  background: #111;
+  color: #fff;
+  resize: vertical;
+}
