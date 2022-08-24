@@ -1,4 +1,30 @@
+import { getState, playMotion, stopMotion, update } from './store.js';
+
 /* global React, ReactDOM */
+
+/* 
+  선언형 프로그래밍
+  상태(데이터) 
+
+  React가 인식하고 제어할 상태 선언
+
+  - motion (play|stop)
+  - contrast (enable|disable)
+
+  const appState = {
+    motion: true,
+    contrast: false,
+  }
+
+  update appState
+
+  detection React (Reconsiliation)
+
+  rendereing React App
+
+
+  JS App + Redux = 선언형
+*/
 
 const { StrictMode, Component, createElement: h } = React;
 
@@ -19,12 +45,12 @@ class Headline extends Component {
   }
 }
 
-const ReactLogo = () =>
+const ReactLogo = (props) =>
   h(
     'svg',
     {
       role: 'none',
-      className: 'reactLogo',
+      className: `reactLogo ${props.motion ? '' : 'stopMotion'}`,
       width: 410,
       height: 370,
       viewBox: '0 0 410 370',
@@ -40,40 +66,37 @@ const ReactLogo = () =>
     })
   );
 
-const Button = ({ children, ...restProps }) =>
+const Button = ({ children, className, ...restProps }) =>
   h(
     'button',
     {
       lang: 'en',
       type: 'button',
-      className: 'button button--fixed',
+      className: `button button--fixed ${className}`.trim(),
       ...restProps,
     },
     children
   );
 
-function App() {
+function App(props) {
   return h(
     'div',
     { className: 'App' },
     h(Headline),
-    h(ReactLogo),
+    h(ReactLogo, { motion: props.motion }),
     h(
       Button,
       {
-        onClick() {},
-        onMouseEnter() {
-          console.log('mouse entered');
+        onClick() {
+          props.motion ? stopMotion() : playMotion();
         },
       },
-      'stop motion'
+      `${props.motion ? 'stop' : 'play'} motion`
     ),
     h(
       Button,
       {
-        onClick: () => {
-          console.log('clicked');
-        },
+        onClick: () => {},
         style: { top: 76 },
       },
       'enable high-contrast'
@@ -86,4 +109,13 @@ function App() {
 const container = document.getElementById('root');
 const reactDOMRoot = ReactDOM.createRoot(container);
 
-reactDOMRoot.render(h(StrictMode, null, h(App)));
+/* like Redux Store --------------------------------------------------------- */
+
+function render() {
+  const { motion } = getState();
+  reactDOMRoot.render(h(StrictMode, null, h(App, { motion })));
+}
+
+render();
+
+update(render);
