@@ -1,0 +1,69 @@
+.App {
+  padding: 2rem;
+}
+
+.container {
+  font: 300 1rem/1.5 'Spoqa Hans Sans', sans-serif;
+}
+
+.container p {
+  margin-top: 0.4rem;
+  text-align: center;
+}
+
+.headline {
+  --font-size: 2.4rem;
+
+  display: flex;
+  margin-bottom: 0;
+  justify-content: center;
+  align-items: center;
+  font-weight: inherit;
+  font-size: var(--font-size);
+}
+
+.headline img {
+  height: var(--font-size);
+  margin-top: -8px;
+  margin-right: 8px;
+}
+
+.globalNavigation ul {
+  margin: 1rem 0;
+  padding-left: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+}
+
+.globalNavigation a {
+  padding: 0.3em 0.6em;
+  text-decoration: none;
+  color: #4a30e9;
+}
+
+.descriptionList {
+  width: 30rem;
+  margin: 30px auto;
+}
+
+.descriptionList dt {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0px;
+}
+
+.descriptionList dd {
+  margin-left: 0;
+  margin-bottom: 20px;
+}
+
+.descriptionList pre {
+  overflow: auto;
+  resize: vertical;
+  border: 1px solid #e6e6e6;
+  height: 10rem;
+  font-size: 11px;
+  background: #111;
+  color: #fff;
+}
