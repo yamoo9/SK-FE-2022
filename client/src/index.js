@@ -1,15 +1,10 @@
 /* global React, ReactDOM */
 
-// 구조 분해 할당(destructuring assignment)
-// const { key1, key2, key3: alias } = 객체;
-
 const { StrictMode, Component, createElement: h } = React;
 
 /* React 컴포넌트 작성 ------------------------------------------------------------ */
 
 class Headline extends Component {
-  // constructor
-  // rendering react node
   render() {
     return h(
       'h1',
@@ -45,14 +40,44 @@ const ReactLogo = () =>
     })
   );
 
+const Button = ({ children, ...restProps }) =>
+  h(
+    'button',
+    {
+      lang: 'en',
+      type: 'button',
+      className: 'button button--fixed',
+      ...restProps,
+    },
+    children
+  );
+
 function App() {
   return h(
     'div',
     { className: 'App' },
-    // headline,
-    // reactLogo,
     h(Headline),
-    h(ReactLogo)
+    h(ReactLogo),
+    h(
+      Button,
+      {
+        onClick() {},
+        onMouseEnter() {
+          console.log('mouse entered');
+        },
+      },
+      'stop motion'
+    ),
+    h(
+      Button,
+      {
+        onClick: () => {
+          console.log('clicked');
+        },
+        style: { top: 76 },
+      },
+      'enable high-contrast'
+    )
   );
 }
 
