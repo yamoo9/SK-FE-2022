@@ -3,4 +3,8 @@
 
 export * from './A11yHidden/A11yHidden';
 export * from './Banner/Banner';
-export { default as RandomUser } from './RandomUser/RandomUser';
+export * from './RandomUser/Spinner';
+export { default as RandomUser } from './RandomUser/RandomUser.class';
+export { default as RandomUserFC } from './RandomUser/RandomUser.function';
+export { default as ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
+export { default as AlbumList } from './Album/AlbumList';

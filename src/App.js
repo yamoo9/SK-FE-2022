@@ -1,15 +1,33 @@
 import { v4 as uuid } from 'uuid';
-import { useState } from 'react';
-import { A11yHidden, Banner, RandomUser } from 'components';
+import { useState, useEffect } from 'react';
+import { A11yHidden, Banner, RandomUserFC, RandomUser } from 'components';
 import { css } from '@emotion/css';
+import { useMouse } from './hooks/useMouse';
+
+// memoization pattern
 
 export default function App() {
-  const [uid, setUid] = useState(uuid());
+  const { x, y } = useMouse();
+
+  console.log('mouse x = ', x);
+  console.log('mouse y = ', y);
+  console.log('-----------------------');
+
+  // 훅의 등장 시기 (2019)
+  // 함수 컴포넌트 : 상태 관리
+  // useState 훅 사용
+  const [uidA, setUidA] = useState(uuid());
+  const [uidZ, setUidZ] = useState(uuid());
+
+  // 함수 컴포넌트 : 사이드 이펙트 관리
+  // useEffect 훅 사용
+  // useEffect(() => {
+  //   console.log('side effect of App');
+  // });
 
   const handleRerenderRandomUser = () => {
-    let newUid = uuid();
-    console.log(`new uid = ${newUid}`);
-    setUid(newUid);
+    setUidA(uuid());
+    setUidZ(uuid());
   };
 
   return (
@@ -32,11 +50,26 @@ export default function App() {
         행복하도록 OK! SK
       </Banner>
 
-      <button type="button" lang="en" onClick={handleRerenderRandomUser}>
+      {/* <AlbumList /> */}
+
+      <button
+        className={css`
+          cursor: pointer;
+          position: fixed;
+          top: 20px;
+          right: 20px;
+          padding: 12px 16px;
+        `}
+        type="button"
+        lang="en"
+        onClick={handleRerenderRandomUser}
+      >
         request data
       </button>
 
-      <RandomUser key={uid} />
+      {/* 고차 컴포넌트 */}
+      <RandomUserFC key={uidA} />
+      <RandomUser key={uidZ} />
     </section>
   );
 }

@@ -27,6 +27,7 @@ class RandomUser extends Component {
   constructor(props) {
     super(props);
 
+    // 클래스 컴포넌트 : 상태 관리
     this.state = {
       loading: true,
       error: null,
@@ -63,7 +64,7 @@ class RandomUser extends Component {
       const {
         data: { results },
       } = await axios.get(
-        'https://randomuser.me/api/?inc=id,email,gender,name,nat,picture'
+        '//randomuser.me/api/?inc=id,email,gender,name,nat,picture'
       );
       const randomUser = results[0];
       this.setState({
@@ -102,4 +103,9 @@ export default RandomUser;
 
 /* component styles --------------------------------------------------------- */
 
-const elementStyle = css``;
+const elementStyle = css`
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  gap: 8px;
+`;
