@@ -14,6 +14,7 @@ export const Banner = ({
       className={css`
         margin: 0;
       `}
+      {...restProps}
     >
       <img
         className={cx(

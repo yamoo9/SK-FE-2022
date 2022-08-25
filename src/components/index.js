@@ -3,3 +3,4 @@
 
 export * from './A11yHidden/A11yHidden';
 export * from './Banner/Banner';
+export { default as RandomUser } from './RandomUser/RandomUser';

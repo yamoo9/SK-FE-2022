@@ -1,4 +1,4 @@
-import { A11yHidden, Banner } from 'components';
+import { A11yHidden, Banner, RandomUser } from 'components';
 import { css } from '@emotion/css';
 
 export default function App() {
@@ -9,6 +9,7 @@ export default function App() {
       </A11yHidden>
 
       <Banner
+        hidden
         url="cover.jpg"
         width={374}
         height={800}
@@ -20,6 +21,12 @@ export default function App() {
         '선한 영향력'이 더 큰 영향력이 되도록 SK도 노력하겠습니다. 모두가 함께,
         행복하도록 OK! SK
       </Banner>
+
+      <button type="button" lang="en">
+        request data
+      </button>
+
+      <RandomUser>랜덤 사용자 불러오기</RandomUser>
     </section>
   );
 }
