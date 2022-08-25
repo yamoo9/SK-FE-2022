@@ -1,0 +1,38 @@
+.warnning {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.warnning img {
+  margin-top: 6vh;
+  margin-bottom: 1vh;
+  margin-left: -40px;
+  height: 340px;
+  width: auto;
+}
+
+.warnning h2 {
+  margin: -40px 0 0;
+  font-weight: 400;
+  font-size: 2.4rem;
+  color: #e3a509;
+}
+
+.warnning p {
+  margin: 0.6em;
+  font-weight: 400;
+  text-align: center;
+}
+
+.warnning a {
+  text-decoration: none;
+  font-weight: 400;
+  color: #1888de;
+}
+
+.warnning a:hover,
+.warnning a:focus {
+  text-decoration: underline;
+}

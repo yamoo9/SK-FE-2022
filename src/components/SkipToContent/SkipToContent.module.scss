@@ -1,0 +1,13 @@
+@use 'styles/config' as *;
+
+.container {
+  position: fixed !important;
+  top: 0;
+  left: 60px;
+  border-radius: 2px;
+  padding: 0.35em 0.7em !important;
+  background: $black-color;
+  color: $secondary-color;
+  text-decoration: none;
+  font-weight: bold;
+}

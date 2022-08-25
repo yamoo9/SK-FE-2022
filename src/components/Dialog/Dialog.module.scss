@@ -1,0 +1,42 @@
+.container {
+  position: fixed;
+  z-index: 10000;
+}
+
+.dialogContents {
+  position: inherit;
+  z-index: 10020;
+  top: 20%;
+  left: 50%;
+  width: 320px;
+  height: auto;
+  border-radius: 6px;
+  padding: 20px;
+  background: rgba(255 255 255 / 90%);
+  transform: translate(-50%, -50%);
+}
+
+.headline {
+  margin: 0;
+}
+
+.button {
+  cursor: pointer;
+  margin-top: 14px;
+  margin-right: 4px;
+  border: 0;
+  border-radius: 3px;
+  padding: 0.6em 1em;
+  background: #333;
+  color: #fff;
+}
+
+.dim {
+  position: inherit;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0 0 0 / 70%);
+  z-index: 10010;
+}

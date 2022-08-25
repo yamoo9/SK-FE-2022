@@ -1,0 +1,27 @@
+@use 'styles/config' as *;
+
+.container {
+  display: grid;
+  grid-template-areas: 'navigation . buttonGroup';
+  padding: 1em;
+  nav {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.buttonGroup {
+  grid-area: buttonGroup;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 3px;
+  padding: 1em 1.4em;
+  background: $primary-color;
+  color: $white-color;
+}

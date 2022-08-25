@@ -1,0 +1,10 @@
+@use 'styles/config' as *;
+
+.container {
+  background: $white-color;
+}
+
+.setting {
+  border-color: $tertiary-color;
+  margin-bottom: 30px !important;
+}

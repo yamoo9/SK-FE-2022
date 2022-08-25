@@ -1,0 +1,59 @@
+@use 'styles/config' as *;
+
+.container {
+  background: $white-color;
+}
+
+.profile {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  border-color: $tertiary-color;
+}
+
+.formControl {
+  display: flex;
+  align-items: center;
+}
+
+.formControl label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: $tertiary-color;
+  margin-right: 10px;
+}
+
+.formControl input {
+  border-radius: 4px;
+  padding: 0.35em;
+  border: 4px solid currentColor;
+  color: $tertiary-color;
+  font-size: 1rem;
+}
+
+.formControl input:focus {
+  outline: none;
+  color: $primary-color;
+}
+
+.buttonGroup {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.buttonGroup button {
+  cursor: pointer;
+  margin-right: 4px;
+  border: 0;
+  border-radius: 4px;
+  padding: 0.65em;
+  background: $tertiary-color;
+  color: $white-color;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.buttonGroup .cancelButton {
+  margin-right: 0;
+  background: $gray-color;
+}

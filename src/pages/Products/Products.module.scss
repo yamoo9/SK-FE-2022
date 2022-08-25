@@ -1,0 +1,48 @@
+@use 'styles/config' as *;
+
+.container {
+  background: $white-color;
+}
+
+.headline {
+  display: inline-block;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  color: #149880;
+}
+
+.link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-decoration: none;
+  font-weight: 900;
+  font-size: 2rem;
+  color: #26e3bf;
+}
+
+.link:hover {
+  background: rgba(38, 227, 192, 0.15);
+}
+
+.link:not(:focus-visible) {
+  outline: none;
+}
+
+.wrapper {
+  display: grid;
+  flex-flow: column;
+}
+
+.backLink {
+  order: -1;
+  color: #26e3bf;
+  svg {
+    height: 2rem;
+  }
+}

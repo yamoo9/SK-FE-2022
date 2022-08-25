@@ -1,0 +1,16 @@
+@use 'styles/config' as *;
+
+.container {
+  margin-bottom: 1rem;
+  padding: 2rem;
+  border: 6px dashed $primary-color;
+}
+
+.secondary {
+  margin-bottom: 2rem;
+  border-color: $secondary-color;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}

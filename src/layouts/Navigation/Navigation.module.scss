@@ -1,0 +1,29 @@
+@use 'styles/config' as *;
+
+.container {
+  margin: 0;
+}
+
+.list {
+  display: flex;
+}
+
+.item {
+  margin: 0 0.4em;
+
+  &:first-child {
+    margin-left: 0;
+  }
+}
+
+.link {
+  padding: 1rem;
+  color: $primary-color;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.active {
+  background: $active-color;
+  border-radius: 6px;
+}

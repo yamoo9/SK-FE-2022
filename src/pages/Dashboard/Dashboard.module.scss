@@ -1,0 +1,95 @@
+@use 'styles/config' as *;
+
+.container {
+  background: $white-color;
+}
+
+.headline {
+  display: inline-block;
+}
+
+.button {
+  cursor: pointer;
+  background: none;
+  border: 0;
+  padding: 0.3em 0 0.1em;
+  font-size: 1rem;
+  color: #7c9691;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+  color: #02c7a3;
+  border-bottom: 4px solid currentColor;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  @media (min-width: 40em) {
+    flex-direction: row;
+  }
+}
+
+.gridItem1 {
+  flex: 1;
+  margin-right: 2rem;
+  min-height: 100px;
+  @media (min-width: 40em) {
+    margin-right: 2rem !important;
+  }
+  .child1 {
+    min-height: 20px;
+    margin-bottom: 2rem !important;
+  }
+  .child2 {
+    min-height: 160px;
+  }
+}
+
+.gridItem2 {
+  overflow-y: scroll;
+  flex: 0 0 160px;
+  margin-left: 2rem;
+  height: 630px !important;
+  @media (min-width: 40em) {
+    margin-left: 2rem !important;
+  }
+  .child1 {
+    min-height: 20px;
+    margin-bottom: 2rem !important;
+  }
+  .child2 {
+    min-height: 160px;
+  }
+}
+
+.navLink {
+  display: inline-block;
+  padding: 0.6em;
+  text-decoration: none;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: $tertiary-color;
+}
+
+.active {
+  background: $active-color;
+  border-radius: 6px;
+}
+
+.subNavigation {
+  ul {
+    display: flex;
+    margin-bottom: 20px;
+  }
+  a {
+    display: block;
+    border-radius: 6px;
+    padding: 0.6em 0.8em;
+    text-decoration: none;
+    color: $tertiary-color;
+    font-weight: 900;
+    font-size: 1rem;
+  }
+}

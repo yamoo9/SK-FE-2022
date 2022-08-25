@@ -1,0 +1,23 @@
+@use 'styles/config' as *;
+
+.container {
+  background: $white-color;
+}
+
+.headline {
+  display: inline-block;
+}
+
+.grid {
+  display: flex;
+  flex-direction: column;
+  min-height: 600px;
+  @media (min-width: 40em) {
+    flex-direction: row;
+  }
+}
+
+.gridItem {
+  flex: 1 0 40%;
+  margin: 0.5rem 2rem;
+}
