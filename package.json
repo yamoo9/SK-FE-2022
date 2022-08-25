@@ -1,0 +1,53 @@
+{
+  "name": "practice-react-hooks",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@emotion/css": "11.10.0",
+    "axios": "0.27.2",
+    "react": "17.0.2",
+    "react-dom": "17.0.2",
+    "web-vitals": "2.1.4"
+  },
+  "scripts": {
+    "start": "run-p dev api",
+    "dev": "cross-env BROWSER=none react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "api": "json-server db.json --watch --port=4000 --delay=600"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ],
+    "rules": {
+      "react/self-closing-comp": "warn"
+    }
+  },
+  "browserslist": {
+    "production": [
+      ">3% in KR",
+      "not dead",
+      "not op_mini all",
+      "ie 11"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version",
+      "last 1 edge version",
+      "ie 11"
+    ]
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "5.16.5",
+    "@testing-library/react": "12.1.5",
+    "@testing-library/user-event": "13.5.0",
+    "cross-env": "7.0.3",
+    "json-server": "0.17.0",
+    "npm-run-all": "4.1.5",
+    "react-scripts": "5.0.1"
+  }
+}
