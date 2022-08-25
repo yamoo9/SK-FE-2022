@@ -1,4 +1,5 @@
 // import React from 'react';
+import { Fragment } from 'react';
 import { PrettyPrintCode } from '@/components';
 
 // `server/db.json` 데이터에서 `navigation.items` 데이터를 화면에 출력해보세요.
@@ -92,21 +93,41 @@ const ListRendering = () => {
       </nav>
 
       {/* 컴포넌트 상태 관리의 필요성, 데이터 패치  */}
-      <button lang="en" type="button" onClick={fetchNavigationItems}>
+      {/* <button lang="en" type="button" onClick={fetchNavigationItems}>
         load data
-      </button>
+      </button> */}
 
       {/* 객체 리스트 렌더링 */}
       <dl className="descriptionList">
         {/* 웹 표준을 준수해 설명 목록(description list, DL)을 화면에 출력해봅니다. */}
         {/* 설명 용어(desc. term, DT) - 설명 (definition description, DD) */}
-        <dt></dt>
-        <dd></dd>
+        {
+          // <React.Fragment>
+          //   <dt>key A</dt>
+          //   <dd>value A</dd>
+          // </React.Fragment>
+        }
         {/* `db` 객체의 "속성", "값" 쌍을 순환하여 리스트 렌더링 해보세요. */}
+        {/* iterable = [[key, value], [key, value]] */}
+        {Object.entries(db).map(([key, value]) => {
+          return (
+            <Fragment key={key}>
+              {/* wrapper object */}
+              <dt>{key.replace(/_/g, ' ')}</dt>
+              <dd>
+                {value && typeof value === 'object' ? (
+                  <PrettyPrintCode code={value} />
+                ) : (
+                  value
+                )}
+              </dd>
+            </Fragment>
+          );
+        })}
         {/* 값의 유형이 객체 또는 배열인 경우, 코드가 화면에 출력되도록 설정합니다. */}
         {/* `isArray`, `isObject` 유틸리티 함수를 만들어 활용하세요. */}
         {/* 코드를 화면에 출력할 때는 <PrettyPrintCode /> 컴포넌트를 활용합니다. (`code` 속성) */}
-        <PrettyPrintCode />
+        {/* <PrettyPrintCode code={db} /> */}
       </dl>
     </div>
   );
