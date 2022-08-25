@@ -1,11 +1,11 @@
-import './A11yHidden.css';
+// CSS
+// import './A11yHidden.css';
 
-// presentational component
-// functional component
-// stateless component
+// CSS Modules
+import styles from './A11yHidden.module.css';
 
-// A11Y = Accessibility
-// "접근성을 갖춘 감춤 처리" 컴포넌트
+// emotion/css
+import { css } from '@emotion/css';
 
 export const A11yHidden = ({
   as: ComponentName,
@@ -13,18 +13,14 @@ export const A11yHidden = ({
   focusable,
   ...restProps
 }) => {
-  // html standards element name 'span'
-  // user defined component Span (PascalCase)
-
   return (
     <ComponentName
-      className={`a11yHidden ${
-        focusable ? 'focusable' : ''
+      className={`${elementStyle} ${
+        focusable ? styles.focusable : ''
       } ${className}`.trim()}
       {...restProps}
     />
   );
-  // return React.createElement(as, null, children);
 };
 
 A11yHidden.defaultProps = {
@@ -32,3 +28,23 @@ A11yHidden.defaultProps = {
   className: '',
   focusable: false,
 };
+
+/* styles ------------------------------------------------------------------- */
+
+const elementStyle = css`
+  overflow: hidden;
+  position: absolute;
+  clip: rect(0, 0, 0, 0);
+  clip-path: circle(0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+
+  /* nested rule */
+  span {
+    color: #11a388;
+  }
+`;

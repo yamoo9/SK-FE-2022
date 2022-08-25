@@ -48,6 +48,7 @@ describe('A11yHidden 컴포넌트', () => {
   test('컴포넌트 요소는 화면에 표시되지 않지만, 스크린 리더에서는 읽을 수 있다.', () => {
     // Jest에서 CSS 스타일 설정된 테스트가 어려워 직접 CSS 코드를 삽입하여 테스트 수행
     componentElement.style.cssText = `
+      visibility: hidden;
       overflow: hidden;
       position: absolute;
       clip: rect(0,0,0,0);

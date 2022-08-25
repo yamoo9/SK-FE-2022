@@ -1,4 +1,4 @@
-.a11yHidden {
+.element {
   overflow: hidden;
   position: absolute;
   clip: rect(0,0,0,0);
@@ -11,7 +11,7 @@
   white-space: nowrap;
 }
 
-.a11yHidden.focusable:focus {
+.focusable:focus {
   overflow: auto;
   position: static;
   clip: unset;
