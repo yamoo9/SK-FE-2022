@@ -1,7 +1,17 @@
+import { v4 as uuid } from 'uuid';
+import { useState } from 'react';
 import { A11yHidden, Banner, RandomUser } from 'components';
 import { css } from '@emotion/css';
 
 export default function App() {
+  const [uid, setUid] = useState(uuid());
+
+  const handleRerenderRandomUser = () => {
+    let newUid = uuid();
+    console.log(`new uid = ${newUid}`);
+    setUid(newUid);
+  };
+
   return (
     <section className="container">
       <A11yHidden as="h1">
@@ -22,11 +32,11 @@ export default function App() {
         행복하도록 OK! SK
       </Banner>
 
-      <button type="button" lang="en">
+      <button type="button" lang="en" onClick={handleRerenderRandomUser}>
         request data
       </button>
 
-      <RandomUser>랜덤 사용자 불러오기</RandomUser>
+      <RandomUser key={uid} />
     </section>
   );
 }
