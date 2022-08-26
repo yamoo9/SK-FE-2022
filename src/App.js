@@ -1,21 +1,25 @@
 import { v4 as uuid } from 'uuid';
 import { useState } from 'react';
-import { A11yHidden, Banner, RandomUserFC, RandomUser } from 'components';
+import {
+  A11yHidden,
+  Banner,
+  RandomUserFC,
+  RandomUser,
+  AlbumList,
+} from 'components';
 import { css } from '@emotion/css';
-import { useMouse } from './hooks/useMouse';
 
 export default function App() {
-  const { x, y } = useMouse();
+  const [uidA, setUidA] = useState(() => {
+    // 지연된 초기화는 1회 설정
+    console.log('initialization');
+    return uuid();
+  });
 
-  console.log('mouse x = ', x);
-  console.log('mouse y = ', y);
-  console.log('-----------------------');
-
-  const [uidA, setUidA] = useState(uuid());
-  const [uidZ, setUidZ] = useState(uuid());
+  const [uidZ, setUidZ] = useState(() => uuid());
 
   const handleRerenderRandomUser = () => {
-    setUidA(uuid());
+    setUidA((uid) => `${uid}-`);
     setUidZ(uuid());
   };
 
@@ -39,7 +43,7 @@ export default function App() {
         행복하도록 OK! SK
       </Banner>
 
-      {/* <AlbumList /> */}
+      <AlbumList />
 
       <button
         className={css`
@@ -56,8 +60,8 @@ export default function App() {
         request data
       </button>
 
-      <RandomUserFC key={uidA} />
-      <RandomUser key={uidZ} />
+      {/* <RandomUserFC key={uidA} /> */}
+      {/* <RandomUser key={uidZ} /> */}
     </section>
   );
 }

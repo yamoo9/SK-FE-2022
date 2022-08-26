@@ -12,10 +12,6 @@ const spinnerStyle = css`
   align-items: center;
 `;
 
-console.log(fidgetPath); // path string
-// SVGR: React Component
-// console.log(<Fidget title="로딩 중...." />);
-
 export const Spinner = ({ label, title, ...restProps }) => {
   return (
     <figure className={spinnerStyle}>

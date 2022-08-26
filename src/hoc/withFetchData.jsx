@@ -3,6 +3,10 @@ import { Spinner } from 'components';
 
 export function withFetchData(Component, endpoint) {
   class EhnacedComponent extends React.Component {
+    // static class field
+    static displayName = 'FetchDataHOC';
+    static defaultProps = {};
+
     state = {
       loading: true,
       error: null,
@@ -40,6 +44,10 @@ export function withFetchData(Component, endpoint) {
       this.fetchData();
     }
   }
+
+  // class member
+  // EhnacedComponent.displayName = 'FetchDataHOC';
+  // EhnacedComponent.defualtProp = {}
 
   return EhnacedComponent;
 }

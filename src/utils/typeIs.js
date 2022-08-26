@@ -5,7 +5,11 @@ export const typeIs = (o) => {
 export const isNull = (o) => typeIs(o) === 'null';
 export const isUndefined = (o) => typeIs(o) === 'undefined';
 export const isString = (o) => typeIs(o) === 'string';
-export const isNumber = (o) => typeIs(o) === 'number';
+export const isNumber = (o) => {
+  let value = typeIs(o);
+  // console.log({ value, a: isNaN(value) });
+  return value === 'number' && isNaN(value);
+};
 export const isBoolean = (o) => typeIs(o) === 'boolean';
 export const isSymbol = (o) => typeIs(o) === 'symbol';
 export const isFunction = (o) => typeIs(o) === 'function';
