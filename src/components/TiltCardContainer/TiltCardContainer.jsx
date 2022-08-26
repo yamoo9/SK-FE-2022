@@ -1,16 +1,14 @@
 import './TiltCardContainer.css';
 import { Component } from 'react';
 import { TiltCard } from 'components';
+import { withFetchData } from 'hoc/withFetchData';
 
-/* -------------------------------------------------------------------------- */
+/* Container Component ------------------------------------------------------ */
 
-export class TiltCardContainer extends Component {
+class TiltCardContainer extends Component {
   state = {
-    cards: [
-      { id: 'card-vanilla', text: 'Vanilla Tilt Card' },
-      { id: 'card-jquery', text: 'jQuery Tilt Card' },
-      { id: 'card-react', text: 'React Tilt Card' },
-    ],
+    // props → derived state
+    cards: this.props.data,
   };
 
   handleRemoveCard = (id) => {
@@ -42,7 +40,7 @@ export class TiltCardContainer extends Component {
             <li key={card.id}>
               <TiltCard
                 card={card}
-                options={{ 'max-glare': 0.2, 'perspective': 600 }}
+                options={{ 'max-glare': 0.2, perspective: 600 }}
               >
                 {card.text}
               </TiltCard>
@@ -53,3 +51,6 @@ export class TiltCardContainer extends Component {
     );
   }
 }
+
+// 고차 컴포넌트
+export default withFetchData(TiltCardContainer, '/tilt-cards');

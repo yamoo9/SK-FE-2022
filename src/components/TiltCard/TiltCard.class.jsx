@@ -2,7 +2,7 @@
 
 import './TiltCard.css';
 import React from 'react';
-// import VanillaTilt from 'vanilla-tilt'
+import VanillaTilt from 'vanilla-tilt';
 
 /* -------------------------------------------------------------------------- */
 // 참고
@@ -13,11 +13,11 @@ import React from 'react';
 
 // Vanilla Tilt 옵션
 const tiltOptions = {
-  'max': 8,
-  'speed': 10,
-  'perspective': 1000,
-  'scale': 1.01,
-  'glare': true,
+  max: 8,
+  speed: 10,
+  perspective: 1000,
+  scale: 1.01,
+  glare: true,
   'max-glare': 0.25,
 };
 
@@ -28,19 +28,48 @@ export class TiltCard extends React.Component {
 
   // DOM 요소 참조를 목적으로 Ref를 생성합니다.
   // → 코드 작성
+  tiltCardRef = React.createRef(null);
 
   // 최초 마운트 시점 이후 처리할 로직을 작성합니다.
   // → 코드 작성
+  componentDidMount() {
+    // DOM 노드에 접근/조작
+    const { current: element } = this.tiltCardRef;
+    VanillaTilt.init(element, tiltOptions);
+  }
 
   // 마운트 해제 직전에 처리할 로직을 작성합니다.
   // → 코드 작성
+  componentWillUnmount() {
+    const { current: element } = this.tiltCardRef;
+    element.vanillaTilt.destroy();
+    // console.log('destory vanilla tilt instance');
+  }
+
+  // 콜백 REF
+  // callbackRef(actualDomNode) {
+  //   actualDomNode.addEventListener?.('mouseenter', (e) => {
+  //     e.target.style.background = 'red';
+  //   });
+  // }
 
   render() {
     const { children } = this.props;
 
+    // return React.createElement(
+    //   'div',
+    //   {
+    //     ref: this.tiltCardRef,
+    //     className: 'tiltCard',
+    //   },
+    //   children
+    // );
+
     return (
       // 생성된 Ref를 참조하도록 설정합니다.
-      <div className="tiltCard">{children}</div>
+      <div ref={this.tiltCardRef} className="tiltCard">
+        {children}
+      </div>
     );
   }
 }

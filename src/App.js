@@ -7,12 +7,16 @@ import {
   RandomUserFC,
   RandomUser,
   AlbumList,
+  TiltCardContainer,
 } from 'components';
+
+/* another hooks ------------------------------------------------------------ */
 
 export default function App() {
   return (
     <section className="container">
       <A11yHidden as="h1">React 훅</A11yHidden>
+      <TiltCardContainer />
     </section>
   );
 }

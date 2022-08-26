@@ -1,5 +1,4 @@
 import { ReactComponent as Fidget } from 'assets/fidget.spinner.svg';
-
 import { css } from '@emotion/css';
 
 const spinnerStyle = css`
