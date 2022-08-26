@@ -1,4 +1,4 @@
-.tiltCard {
+.container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -8,13 +8,13 @@
   background: #3f3d56;
   color: #fff;
   font-size: 1.8rem;
-}
 
-.tiltCard:hover {
-  position: relative;
-  z-index: 100;
-}
+  &:hover {
+    position: relative;
+    z-index: 100;
+  }
 
-.tiltCard::selection {
-  background: #000;
+  &::selection {
+    background: #000;
+  }
 }

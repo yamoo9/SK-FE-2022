@@ -4,6 +4,7 @@
 export * from './Banner/Banner';
 export * from './RandomUser/Spinner';
 export * from './A11yHidden/A11yHidden';
+export * from './A11yHidden/A11yHidden.styled';
 export * from './TiltCard/TiltCard.function';
 
 export { default as TiltCardContainer } from './TiltCardContainer/TiltCardContainer';

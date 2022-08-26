@@ -1,11 +1,13 @@
 import './TiltCardContainer.css';
-import { Component } from 'react';
+import { Component, createRef } from 'react';
 import { TiltCard } from 'components';
 import { withFetchData } from 'hoc/withFetchData';
 
 /* Container Component ------------------------------------------------------ */
 
 class TiltCardContainer extends Component {
+  firstTiltCardButtonRef = createRef(null);
+
   state = {
     // props → derived state
     cards: this.props.data,
@@ -17,6 +19,19 @@ class TiltCardContainer extends Component {
       cards: this.state.cards.filter((card) => card.id !== id),
     });
   };
+
+  componentDidMount() {
+    // console.log(
+    //   'firstTiltCardButtonRef: ',
+    //   this.firstTiltCardButtonRef.current
+    // );
+    setTimeout(() => {
+      // console.log(this.firstTiltCardButtonRef.current);
+      this.firstTiltCardButtonRef.current.style.fontSize = '32px';
+      // this.firstTiltCardButtonRef.current.focus();
+      // console.log('focused firstTiltCardButtonRef');
+    }, 1000);
+  }
 
   render() {
     const { cards } = this.state;
@@ -36,9 +51,10 @@ class TiltCardContainer extends Component {
           ))}
         </div>
         <ul className="tiltCardContainer__list">
-          {cards.map((card) => (
+          {cards.map((card, index) => (
             <li key={card.id}>
               <TiltCard
+                ref={index === 0 ? this.firstTiltCardButtonRef : null}
                 card={card}
                 options={{ 'max-glare': 0.2, perspective: 600 }}
               >

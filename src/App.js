@@ -3,6 +3,7 @@ import { v4 as uuid } from 'uuid';
 import { useState } from 'react';
 import {
   A11yHidden,
+  StyledA11yHidden,
   Banner,
   RandomUserFC,
   RandomUser,
@@ -15,7 +16,7 @@ import {
 export default function App() {
   return (
     <section className="container">
-      <A11yHidden as="h1">React 훅</A11yHidden>
+      <StyledA11yHidden as="h1">React 훅</StyledA11yHidden>
       <TiltCardContainer />
     </section>
   );
