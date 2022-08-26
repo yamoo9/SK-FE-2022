@@ -1,3 +1,4 @@
+import React from 'react';
 import styled from 'styled-components/macro';
 
 const StyledButton = styled.button`
@@ -21,7 +22,7 @@ const StyledButton = styled.button`
   }
 `;
 
-export const Button = ({ label, ...restProps }) => {
+export const Button = React.memo(function Button({ label, ...restProps }) {
   return (
     <StyledButton
       type="button"
@@ -30,7 +31,7 @@ export const Button = ({ label, ...restProps }) => {
       {...restProps}
     />
   );
-};
+});
 
 Button.Group = styled.div`
   display: inline-flex;
