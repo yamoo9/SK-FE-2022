@@ -3,7 +3,7 @@ import React from 'react';
 export default class ErrorBoundary extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { hasError: false };
+    this.state = { error: null, info: [], hasError: false };
   }
 
   static getDerivedStateFromError(error) {
@@ -12,6 +12,19 @@ export default class ErrorBoundary extends React.Component {
 
   componentDidCatch(error, errorInfo) {
     this.logErrorToMyService(error, errorInfo);
+    // this.setState(
+    //   ({ info }, props) => {
+    //     return {
+    //       error,
+    //       info: [...info, errorInfo],
+    //     };
+    //   },
+    //   () => {
+    //     console.log(this.state.error); // error {}
+    //   }
+    // );
+
+    // console.log(this.state.error); // null
   }
 
   logErrorToMyService(error, info) {

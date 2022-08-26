@@ -12,7 +12,7 @@ import { css } from '@emotion/css';
 export default function App() {
   const [uidA, setUidA] = useState(() => {
     // 지연된 초기화는 1회 설정
-    console.log('initialization');
+    // console.log('initialization');
     return uuid();
   });
 
