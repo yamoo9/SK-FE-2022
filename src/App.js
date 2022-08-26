@@ -10,6 +10,10 @@ import {
 import { css } from '@emotion/css';
 
 export default function App() {
+  const [isShowAlbumList, setIsShowAlbumList] = useState(true);
+
+  const handleUpdate = () => setIsShowAlbumList(!isShowAlbumList);
+
   const [uidA, setUidA] = useState(() => {
     // 지연된 초기화는 1회 설정
     // console.log('initialization');
@@ -43,7 +47,11 @@ export default function App() {
         행복하도록 OK! SK
       </Banner>
 
-      <AlbumList />
+      <button lang="en" type="button" onClick={handleUpdate}>
+        toggle albumlist
+      </button>
+
+      {isShowAlbumList && <AlbumList />}
 
       <button
         className={css`
