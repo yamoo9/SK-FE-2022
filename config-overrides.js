@@ -1,4 +1,12 @@
-/* eslint-disable react-hooks/rules-of-hooks */
-const { override, useBabelRc } = require('customize-cra');
+const { resolve } = require('path');
 
-module.exports = override(useBabelRc());
+/* eslint-disable react-hooks/rules-of-hooks */
+const { override, useBabelRc, addWebpackAlias } = require('customize-cra');
+
+module.exports = override(
+  useBabelRc(),
+  addWebpackAlias({
+    '@': resolve(__dirname, 'src'),
+    '@/components': resolve(__dirname, 'src/components'),
+  })
+);

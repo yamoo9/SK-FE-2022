@@ -8,7 +8,7 @@ import {
   RandomUserFC,
   RandomUser,
   AlbumList,
-  TiltCardContainer,
+  Counter,
 } from 'components';
 
 /* another hooks ------------------------------------------------------------ */
@@ -17,7 +17,7 @@ export default function App() {
   return (
     <section className="container">
       <StyledA11yHidden as="h1">React 훅</StyledA11yHidden>
-      <TiltCardContainer />
+      <Counter max={30} step={3} />
     </section>
   );
 }

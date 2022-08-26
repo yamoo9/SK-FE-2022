@@ -32,4 +32,4 @@ export const StyledA11yHidden = styled.span`
   }}
 `;
 
-StyledA11yHidden.displayName = 'StyledA11yHidden';
+// StyledA11yHidden.displayName = 'StyledA11yHidden';
