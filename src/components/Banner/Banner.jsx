@@ -1,5 +1,6 @@
 import { css, cx } from '@emotion/css';
 import { A11yHidden } from 'components';
+import { useFetch } from 'hooks/useFetch';
 
 export const Banner = ({
   url,
@@ -9,6 +10,20 @@ export const Banner = ({
   children,
   ...restProps
 }) => {
+  const { isLoading, hasError, error, data } = useFetch(
+    'http://localhost:4000/contacts'
+  );
+
+  if (isLoading) {
+    return <div role="alert">로딩 중...</div>;
+  }
+
+  if (hasError) {
+    return <div role="alert">{error.message}</div>;
+  }
+
+  console.log({ contacts: data });
+
   return (
     <figure
       className={css`

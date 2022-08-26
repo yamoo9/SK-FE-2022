@@ -34,7 +34,6 @@ export default function App() {
       </A11yHidden>
 
       <Banner
-        hidden
         url="cover.jpg"
         width={374}
         height={800}
