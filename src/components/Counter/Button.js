@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/macro';
+import { useAuth } from 'contexts/auth';
 
 const StyledButton = styled.button`
   user-select: none;
@@ -23,6 +24,10 @@ const StyledButton = styled.button`
 `;
 
 export const Button = React.memo(function Button({ label, ...restProps }) {
+  const { isSigned } = useAuth();
+
+  console.log(isSigned);
+
   return (
     <StyledButton
       type="button"

@@ -10,13 +10,33 @@ import {
   AlbumList,
   Counter,
 } from 'components';
+import { useAuth } from 'contexts/auth';
 
 /* another hooks ------------------------------------------------------------ */
 
 export default function App() {
+  const {
+    auth: { isSigned },
+    signIn,
+    signOut,
+    setAdmin,
+  } = useAuth();
+
   return (
     <section className="container">
       <StyledA11yHidden as="h1">React 훅</StyledA11yHidden>
+      {!isSigned ? (
+        <>
+          <button onClick={() => signIn({ email: 'yamoo9@euid.dev' })}>
+            로그인
+          </button>
+        </>
+      ) : (
+        <>
+          <button onClick={() => signOut()}>로그아웃</button>
+          <button onClick={() => setAdmin()}>관리자 권한 승인</button>
+        </>
+      )}
       <Counter max={30} step={3} />
     </section>
   );

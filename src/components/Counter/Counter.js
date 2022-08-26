@@ -13,6 +13,8 @@ const StyledCounter = styled.div`
 export const Counter = ({ count: initialCount, step, min, max }) => {
   const [count, setCount] = React.useState(initialCount);
 
+  // useCallback 훅 (useMemo 사용)
+  // JavaScript의 함수 값을 기억
   const incrementCount = React.useCallback(() => {
     setCount((count) => {
       let updateCountValue = count + step;
@@ -21,13 +23,18 @@ export const Counter = ({ count: initialCount, step, min, max }) => {
     });
   }, [max, step]);
 
-  const decrementCount = React.useCallback(() => {
-    setCount((count) => {
-      let updateCountValue = count - step;
-      updateCountValue = updateCountValue < min ? min : updateCountValue;
-      return updateCountValue;
-    });
-  }, [min, step]);
+  // useMemo 훅
+  // JavaScript의 모든 값을 기억
+  const decrementCount = React.useMemo(
+    () => () => {
+      setCount((count) => {
+        let updateCountValue = count - step;
+        updateCountValue = updateCountValue < min ? min : updateCountValue;
+        return updateCountValue;
+      });
+    },
+    [min, step]
+  );
 
   return (
     <StyledCounter>
