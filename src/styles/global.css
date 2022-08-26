@@ -4,7 +4,7 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
-  background: #ebfb0f;
+  background: #e9e9e9;
 }
 
 [hidden] {
@@ -12,7 +12,6 @@ body {
 }
 
 .container {
-  width: 300px;
   font: 300 1rem/1.5 'Spoqa Hans Sans', sans-serif;
 }
 

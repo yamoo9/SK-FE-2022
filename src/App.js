@@ -1,3 +1,4 @@
+import { css } from '@emotion/css';
 import { v4 as uuid } from 'uuid';
 import { useState } from 'react';
 import {
@@ -7,9 +8,18 @@ import {
   RandomUser,
   AlbumList,
 } from 'components';
-import { css } from '@emotion/css';
 
 export default function App() {
+  return (
+    <section className="container">
+      <A11yHidden as="h1">React 훅</A11yHidden>
+    </section>
+  );
+}
+
+/* useState, useEffect ------------------------------------------------------ */
+
+export function LectureApp() {
   const [isShowAlbumList, setIsShowAlbumList] = useState(false);
 
   const handleUpdate = () => setIsShowAlbumList(!isShowAlbumList);
