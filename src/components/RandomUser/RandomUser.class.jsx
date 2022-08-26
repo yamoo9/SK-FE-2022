@@ -20,7 +20,7 @@ class RandomUser extends Component {
 
     return (
       <figure className={elementStyle}>
-        <img src={user.photo} alt="" />
+        <img src={user.photo} alt="" height="188" width="188" />
         <figcaption>{user.email}</figcaption>
       </figure>
     );

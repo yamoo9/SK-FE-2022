@@ -10,7 +10,7 @@ import {
 import { css } from '@emotion/css';
 
 export default function App() {
-  const [isShowAlbumList, setIsShowAlbumList] = useState(true);
+  const [isShowAlbumList, setIsShowAlbumList] = useState(false);
 
   const handleUpdate = () => setIsShowAlbumList(!isShowAlbumList);
 
@@ -68,8 +68,8 @@ export default function App() {
         request data
       </button>
 
-      {/* <RandomUserFC key={uidA} /> */}
-      {/* <RandomUser key={uidZ} /> */}
+      <RandomUserFC key={uidA} />
+      <RandomUser key={uidZ} />
     </section>
   );
 }

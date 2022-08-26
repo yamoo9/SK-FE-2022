@@ -9,50 +9,54 @@ let initialNewInput = 0;
 function AlbumList(props) {
   let [today] = useState(() => new Date().toISOString());
 
-  (() => {
-    // 함수 컴포넌트가 렌더링 될 때 바로 실행
-    console.log(
-      '0: 함수 컴포넌트가 초기 또는 다시 렌더링 될 때 마다 실행되는 콜백 함수',
-      document.querySelector(`.${controlStyle}`)
-    );
-  })();
+  // (() => {
+  //   // 함수 컴포넌트가 렌더링 될 때 바로 실행
+  //   console.log(
+  //     '0: 함수 컴포넌트가 초기 또는 다시 렌더링 될 때 마다 실행되는 콜백 함수',
+  //     document.querySelector(`.${controlStyle}`)
+  //   );
+  // })();
 
-  useEffect(() => {
-    // 함수 컴포넌트가 렌더링 되어 실제 DOM 노드에 반영된 이후 실행
-    console.log(
-      '1: 함수 컴포넌트가 초기 또는 다시 렌더링 될 때 마다 실행되는 콜백 함수',
-      document.querySelector(`.${controlStyle}`)
-    );
-  });
+  // useEffect(() => {
+  //   // 함수 컴포넌트가 렌더링 되어 실제 DOM 노드에 반영된 이후 실행
+  //   console.log(
+  //     '1: 함수 컴포넌트가 초기 또는 다시 렌더링 될 때 마다 실행되는 콜백 함수',
+  //     document.querySelector(`.${controlStyle}`)
+  //   );
+  // });
 
-  useEffect(
-    // 이펙트 함수(콜백)
-    () => {
-      // console.log('componentDidMount'); // [x] 1회만 처리
-      // console.log('componentDidUpdate'); // [x] 업데이트 때마다 처리
-      // console.log('componentWillUnmount'); // [x] 컴포넌트 제거 전에 처리
+  // useEffect(
+  //   // 이펙트 함수(콜백)
+  //   () => {
+  //     // console.log('componentDidMount'); // [x] 1회만 처리
+  //     // console.log('componentDidUpdate'); // [x] 업데이트 때마다 처리
+  //     // console.log('componentWillUnmount'); // [x] 컴포넌트 제거 전에 처리
 
-      const updateMousePosition = (e) => {
-        console.log('x', e.pageX);
-        console.log('y', e.pageY);
-        console.log('----------');
-      };
+  //     const updateMousePosition = (e) => {
+  //       console.log('x', e.pageX);
+  //       console.log('y', e.pageY);
+  //       console.log('----------');
+  //     };
 
-      // 이벤트 구독
-      window.addEventListener('mousemove', updateMousePosition);
-      // 이벤트 구독 취소
-      return () => window.removeEventListener('mousemove', updateMousePosition);
+  //     // 이벤트 구독
+  //     console.log('subscription');
+  //     window.addEventListener('mousemove', updateMousePosition);
+  //     // 이벤트 구독 취소
+  //     return () => {
+  //       console.log('unsubscription');
+  //       window.removeEventListener('mousemove', updateMousePosition);
+  //     };
 
-      // 클린업 함수
-      // return function cleanup() {
-      // return () => {
-      // 이벤트 구독 취소
-      // window.removeEventListener('mousemove', updateMousePosition);
-      // };
-    }
-    // 종속(의존)성 배열
-    // []
-  );
+  //     // 클린업 함수
+  //     // return function cleanup() {
+  //     // return () => {
+  //     // 이벤트 구독 취소
+  //     // window.removeEventListener('mousemove', updateMousePosition);
+  //     // };
+  //   },
+  //   // 종속(의존)성 배열
+  //   []
+  // );
 
   // 관심사: newInput 상태가 업데이트 되면 OOO 한다.
   const [newInput, setNewInput] = useState(initialNewInput);
@@ -66,8 +70,18 @@ function AlbumList(props) {
     // 이펙트 함수(콜백)
     () => {
       // console.log('componentDidMount'); // [x] 1회만 처리
-      console.log('componentDidUpdate'); // [x] 업데이트 때마다 처리
-      // console.log('componentWillUnmount'); // [ ] 컴포넌트 제거 전에 처리
+      // console.log('componentDidUpdate'); // [x] 업데이트 때마다 처리
+
+      // 인터벌
+      let clearId = setInterval(() => {
+        console.log('interval');
+      }, 1000);
+
+      // 인터벌 클리어
+      // 클린업은 언제 실행되는가?
+      // - componentWillUnmount [x] 컴포넌트 제거 전에 처리
+      // - 업데이트 되면 클린업 함수 실행 → 이펙트 함수 실행
+      return () => clearInterval(clearId);
     },
     // 종속(의존)성 배열
     // 배열에 추가된 선언된 상태가 업데이트 되면, 이펙트 함수(콜백) 실행

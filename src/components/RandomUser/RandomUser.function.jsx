@@ -14,7 +14,7 @@ const RandomUser = ({ data: { results } }) => {
 
   return (
     <figure className={elementStyle}>
-      <img height={188} width={188} src={user.photo} alt="" />
+      <img height="188" width="188" src={user.photo} alt="" />
       <figcaption>{user.email}</figcaption>
     </figure>
   );

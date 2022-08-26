@@ -1,6 +1,4 @@
-import fidgetPath, {
-  ReactComponent as Fidget,
-} from 'assets/fidget.spinner.svg';
+import { ReactComponent as Fidget } from 'assets/fidget.spinner.svg';
 
 import { css } from '@emotion/css';
 
