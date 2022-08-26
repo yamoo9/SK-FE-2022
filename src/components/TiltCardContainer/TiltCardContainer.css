@@ -1,0 +1,53 @@
+.tiltCardContainer {
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.tiltCardContainer__buttonGroup {
+  display: inline-flex;
+  flex-direction: column;
+  margin: 40px 0 0 0;
+}
+
+.tiltCardContainer__button {
+  cursor: pointer;
+  border: 0;
+  border-radius: 3px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 0.6em 1.2em;
+  font-size: 0.86rem;
+}
+
+.tiltCardContainer__button:hover {
+  background: #3f3d56;
+  color: #eee;
+}
+
+.tiltCardContainer__list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-flow: column;
+}
+
+@media (min-width: 64em) {
+  .tiltCardContainer {
+    text-align: left;
+  }
+
+  .tiltCardContainer__buttonGroup {
+    flex-direction: row;
+  }
+
+  .tiltCardContainer__button {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .tiltCardContainer__list {
+    flex-flow: row;
+  }
+}

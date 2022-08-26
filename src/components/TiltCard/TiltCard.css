@@ -1,0 +1,20 @@
+.tiltCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 440px;
+  min-height: 440px;
+  margin: 10px;
+  background: #3f3d56;
+  color: #fff;
+  font-size: 1.8rem;
+}
+
+.tiltCard:hover {
+  position: relative;
+  z-index: 100;
+}
+
+.tiltCard::selection {
+  background: #000;
+}
